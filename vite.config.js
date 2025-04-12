@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/M3TFluid-Lab.github.io",
+  base: "/",  // ✅ Updated for user/org GitHub Pages deployment
   optimizeDeps: {
     include: ["flowbite"],
   },
