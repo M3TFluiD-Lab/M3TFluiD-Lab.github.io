@@ -9,6 +9,7 @@ import Hero from "./Hero";
 import Navbar from "./Navbar";
 import About from "./About";
 import Tech from "./Tech";
+import Team from "./Team";
 import Research from "./Research";
 import Contact from "./Contact";
 
@@ -17,6 +18,7 @@ export {
   Navbar,
   About,
   Tech,
+  Team,
   Research,
   Contact,
   EarthCanvas,

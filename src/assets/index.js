@@ -7,6 +7,11 @@ import eduskill from "./company/eduskill.png";
 import img1 from "./tech-stack/img1.jpg";
 import img3 from "./tech-stack/img3.png";
 
+// Import members images
+import Navid from "./Team/Navid.png";
+import Javad from "./Team/Javad.jpg";
+import Maede from "./Team/Maede.jpeg";
+import Shivesh from "./Team/Shivesh.jpg";
 
 // Import project images
 import MFSM from "./projects/MFSM.png";
@@ -36,6 +41,10 @@ export {
   Ansys,
   WRF,
   TF,
+  Javad,
+  Navid,
+  Maede,
+  Shivesh,
   MFSM,
   PyTorch,
   logo,

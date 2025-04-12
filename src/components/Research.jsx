@@ -73,4 +73,6 @@ const Research = () => {
   );
 };
 
-export default SectionWrapper(Research, "");
+const WrappedResearch = SectionWrapper(Research, 'research');
+
+export default WrappedResearch;

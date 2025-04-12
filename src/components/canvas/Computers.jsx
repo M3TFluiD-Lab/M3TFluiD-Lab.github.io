@@ -26,6 +26,7 @@ const ComputerModel = ({ isMobile }) => {
           width: isMobile ? "300px" : "600px",
           height: "auto",
           borderRadius: "10px",
+          marginTop: "200px",
         }}
       />
     </div>
