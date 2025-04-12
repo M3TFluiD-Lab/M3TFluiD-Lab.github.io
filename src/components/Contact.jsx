@@ -71,9 +71,9 @@ const Contact = () => {
         "template_mf5x3bh",
         {
           from_name: form.name,
-          to_name: "Dr. Navid Goudarzi",
+          to_name: "Javad Mortazavian",
           from_email: form.email,
-          to_email: "n.goudarzi@csuohio.edu",
+          to_email: "s.mortazaviannajafabadi@vikes.csuohio.edu",
           message: form.message,
         },
         "p-gXzzyvEhPaJ0XA-"
