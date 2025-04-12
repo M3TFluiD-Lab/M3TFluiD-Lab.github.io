@@ -67,16 +67,16 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_r2i0by4",
-        "template_mf5x3bh",
+        "service_09jisad",
+        "template_5jw0t6t",
         {
           from_name: form.name,
           to_name: "Javad Mortazavian",
           from_email: form.email,
-          to_email: "s.mortazaviannajafabadi@vikes.csuohio.edu",
+          to_email: "sjavadmortazavian@gmail.com",
           message: form.message,
         },
-        "p-gXzzyvEhPaJ0XA-"
+        "vNhjDZ99IgpGcPw0b"
       )
       .then(
         () => {
