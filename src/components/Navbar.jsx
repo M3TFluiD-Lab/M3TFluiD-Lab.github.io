@@ -48,7 +48,7 @@ const Navbar = () => {
         >
           <img src={logo} alt="logo" className="w-26 h-20 object-contain" />
           <p className="text-white text-[20px] font-bold cursor-pointer flex">
-            M3TFluiD&nbsp;
+          M³TFluid&nbsp;
             <span className="sm:block hidden">Lab</span>
           </p>
         </Link>

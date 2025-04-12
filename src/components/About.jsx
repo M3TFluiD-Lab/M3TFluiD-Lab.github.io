@@ -7,7 +7,7 @@ import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion';
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+  <Tilt className="xs:w-[280px] w-full"> {/* optional: increased width slightly */}
     <motion.div
       variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
@@ -18,16 +18,14 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col"
+        className="bg-tertiary rounded-[20px] py-6 px-12 min-h-[320px] flex justify-center items-center flex-col"
       >
-        {/* Adjusted the image size */}
         <img
           src={icon}
-          alt="web-development"
-          className="w-64 h-64 object-contain" // Changed from w-16 h-16 to w-32 h-32
+          alt="service-icon"
+          className="w-[120px] h-[120px] object-contain mb-4" // ✅ Image size increased
           loading="lazy"
         />
-
         <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
       </div>
     </motion.div>
@@ -46,12 +44,12 @@ const About = () => {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        M3TFluiD lab is dedicated to exploring the complex and multidisciplinary nature of climate
-        adaptation and environmental mitigation strategies (CAEMS) in the built environment using
-        fundamental fluid dynamics, advanced data-driven models, and multi-fidelity computational techniques.
-        The M3TFluiD lab outcomes have a broad range of applications in building energy modeling,
-        advanced air mobility, smart city planning, and renewable energy solutions. These outcomes also
-        support empowering local communities with the required tools and knowledge to use and support CAEMS.
+        M³TFluid Lab is dedicated to exploring the complex and multidisciplinary nature of climate adaptation 
+        and environmental mitigation strategies (CAEMS) in the built environment usingfundamental fluid dynamics, 
+        advanced data-driven models, and multi-fidelity computational techniques.
+        The M³TFluid Lab outcomes have a broad range of applications in building energy modeling, advanced air 
+        mobility, smart city planning, and renewable energy solutions. These outcomes also support empowering 
+        local communities with the required tools and knowledge to use and support CAEMS.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

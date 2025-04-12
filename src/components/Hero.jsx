@@ -15,13 +15,13 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroHeadText} text-white`}>
-            Welcome to <span className="text-[#915EFF]">M3TFluiD Lab</span>
+            Welcome to <span className="text-[#915EFF]">M³TFluid Lab</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             We build the future of
             <Typewriter
               options={{
-                strings: ["Urban Microclimate", "City Resilience", "Urban Heat Island", "Climate Change"],
+                strings: ["Urban Microclimate", "City Resilience", "Urban Heat Island", "Local Physics Dynamics", "Emission Physics"],
                 autoStart: true,
                 loop: true,
                 loopCount: Infinity,

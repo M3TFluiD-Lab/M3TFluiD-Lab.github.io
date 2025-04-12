@@ -11,6 +11,7 @@ import About from "./About";
 import Tech from "./Tech";
 import Team from "./Team";
 import Research from "./Research";
+import Publications from "./Publications";
 import Contact from "./Contact";
 
 export {
@@ -20,6 +21,7 @@ export {
   Tech,
   Team,
   Research,
+  Publications,
   Contact,
   EarthCanvas,
   BallCanvas,
