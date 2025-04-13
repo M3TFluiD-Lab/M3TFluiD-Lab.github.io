@@ -2,10 +2,12 @@ import {
   img1,
   img3,
   MFSM,
+  ROM,
   Javad,
   Navid,
   Maede,
   Shivesh,
+  logo,
   edunet,
   mathwork,
   eduskill,
@@ -41,17 +43,10 @@ export const navLinks = [
 
 export const services = [
   { title: "Neighborhood", icon: img1 },
-  { title: "High-rise building", icon: img3},
+  { title: "High-Rise Building", icon: img3},
 
 ];
 
-export const technologies = [
-  { name: "OpenFOAM", icon: OpenFOAM },
-  { name: "Ansys", icon: Ansys },
-  { name: "WRF", icon: WRF },
-  { name: "PyTorch", icon: PyTorch },
-  { name: "TF", icon: TF },
-];
 
 export const members = [
   {
@@ -71,10 +66,11 @@ export const members = [
     name: "Javad Mortazavian",
     email: "s.mortazaviannajafabadi@vikes.csuohio.edu",
     description:
-      "I am a second-year PhD student in M³TFluid Lab. My research focuses on developing a multi-fidelity surrogate model for predicting wind loads on high-rise buildings using CFD and ML/DL.",
+      "I am a PhD Candidate in M³TFluid Lab. My research focuses on developing a multi-fidelity surrogate model for predicting wind loads on high-rise buildings using CFD and ML/DL.",
     tags: [
       { name: "CFD", color: "blue-text-gradient" },
       { name: "SciML", color: "green-text-gradient" },
+      { name: "Surrogate Modeling", color: "green-text-gradient" },
     ],
     image: Javad,
     source_code_link: "https://javad-mortazavian.github.io/",
@@ -83,7 +79,7 @@ export const members = [
     name: "Maede Najian",
     email: "m.najian@vikes.csuohio.edu",
     description:
-      "I am a second-year PhD student in M³TFluid Lab. My research focuses on building energy modeling and urban microclimate using CFD and BEM.",
+      "I am a PhD Candidate in M³TFluid Lab. My research focuses on building energy modeling and urban microclimate using CFD and BEM.",
     tags: [
       { name: "CFD", color: "blue-text-gradient" },
       { name: "WRF", color: "green-text-gradient" },
@@ -97,7 +93,7 @@ export const members = [
     name: "Shivesh Sharma",
     email: "s.n.sharma@vikes.csuohio.edu",
     description:
-      "I am a second-year PhD student in M³TFluid Lab. My research focuses on developing developing ROM models for Urban Air Mobility using CFD and ML/DL.",
+      "I am a PhD Candidate in M³TFluid Lab. My research focuses on developing developing ROM models for Urban Air Mobility using CFD and ML/DL.",
     tags: [
       { name: "CFD", color: "blue-text-gradient" },
       { name: "ROM", color: "green-text-gradient" },
@@ -110,16 +106,70 @@ export const members = [
 
 export const projects = [
   {
-    name: "MFSM",
+    name: "Multi-Fidelity Surrogate Modeling (MFSM) and Real-Time Prediction",
     description:
-      "A Multi-Fidelity Surrogate Model for the prediction of wind loads on high-rise buildings using OpenFOAM and PyTorch.",
+      "We explore hybrid modeling frameworks that combine a wide range of low-fidelity models with a selected number of high-fidelity simulations, enhanced through physics-informed machine learning. These tools provide fast, scalable, and interpretable predictions for dynamic flow environments, enabling near-real-time control and design optimization. We also integrate digital twin concepts to support continuously updating simulations that reflect real-world dynamics.",
     tags: [
       { name: "OpenFOAM", color: "blue-text-gradient" },
+      { name: "AI/ML", color: "blue-text-gradient" },
       { name: "PyTorch", color: "green-text-gradient" },
     ],
     image: MFSM,
    // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
   },
+  {
+    name: "Reduced-Order Modeling and Data-Driven Workflows",
+    description:
+      "We apply dimensionality reduction techniques and model reduction strategies to construct surrogate models that preserve essential physical behavior while improving computational efficiency. These approaches accelerate design cycles and expand simulation accessibility for interdisciplinary applications.",
+    tags: [
+      { name: "ANSYS", color: "blue-text-gradient" },
+      { name: "Python", color: "green-text-gradient" },
+      { name: "MATLAB", color: "green-text-gradient" },
+      { name: "TF", color: "green-text-gradient" },
+    ],
+    image: ROM,
+   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+  },
+  {
+    name: "Heat Transfer and Energy Systems Analysis",
+    description:"Our work includes modeling and analysis of convective, conductive, and radiative heat transfer phenomena in complex geometries. Using tools like GIS and WRF, we explore spatially informed environmental dynamics for building envelope studies, HVAC optimization, and energy efficiency evaluations across multiple scales.",
+     tags: [
+      { name: "GIS", color: "blue-text-gradient" },
+      { name: "WRF", color: "green-text-gradient" },
+    ],
+    image: logo,
+   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+  },
+
+  {
+    name: "Aerothermal Systems and Advanced Mobility Platforms",
+    description:" We explore fluid-thermal interactions in emerging transportation systems such as UAVs and urban air mobility vehicles. Our research supports aerodynamic optimization, thermal protection strategies, and energy-aware design of high-performance mobility technologies. Enhanced visualization capabilities, including VR/AR integration, are used to interpret complex simulation data and improve design feedback loops.",
+     tags: [
+      { name: "VR/AR", color: "blue-text-gradient" },
+      { name: "UAV", color: "green-text-gradient" },
+    ],
+    image: logo,
+   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+  },
+  {
+    name: "Local Turbulent Flow and Thermal Interaction Modeling",
+    description:" We create multiscale models for local turbulent flow and thermal interactions across built environments and vegetated urban landscapes. Our work enables high-resolution assessments of local atmospheric dynamics and emission physics to inform architectural design, urban transportation planning, and air quality management.",
+     tags: [
+      { name: "Air Quality", color: "blue-text-gradient" },
+      { name: "Vegetated Urban Landscapes", color: "green-text-gradient" },
+    ],
+    image: logo,
+   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+  },
+
+];
+
+export const technologies = [
+  { name: "OpenFOAM", icon: OpenFOAM },
+  { name: "Ansys", icon: Ansys },
+  { name: "WRF", icon: WRF },
+  { name: "PyTorch", icon: PyTorch },
+  { name: "TF", icon: TF },
 ];
 
 export const publications = [

@@ -15,8 +15,7 @@ import Shivesh from "./Team/Shivesh.jpg";
 
 // Import project images
 import MFSM from "./projects/MFSM.png";
-
-
+import ROM from "./projects/ROM.png";
 
 // Import tech logos
 import OpenFOAM from "./tech/OpenFOAM.png";
@@ -46,6 +45,7 @@ export {
   Maede,
   Shivesh,
   MFSM,
+  ROM,
   PyTorch,
   logo,
   menu,

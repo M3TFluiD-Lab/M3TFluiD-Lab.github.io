@@ -7,17 +7,12 @@ import { SectionWrapper } from "../hoc";
 import { publications } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const PublicationCard = ({ title, authors, doi, publisher }) => {
+const PublicationCard = ({ title, authors, publisher }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring")} className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
-      <div className="mt-2">
-        <h3 className="text-white font-bold text-[20px]">{title}</h3>
-        <p className="text-[14px] italic text-gray-300 mt-1">{authors}</p>
-        <p className="text-[13px] text-green-300 mt-2">
-          DOI: <span className="font-mono text-[13px]">{doi}</span>
-        </p>
-        <p className="text-[13px] text-yellow-200 mt-1">{publisher}</p>
-      </div>
+    <motion.div variants={fadeIn("up", "spring")} className="w-full">
+      <p className="text-white text-[15px] leading-7">
+        • <span className="font-bold">{title}</span>. <span className="italic">{authors}</span>. {publisher}
+      </p>
     </motion.div>
   );
 };

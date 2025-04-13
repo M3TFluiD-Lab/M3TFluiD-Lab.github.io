@@ -23,10 +23,10 @@ const ComputerModel = ({ isMobile }) => {
         loop
         muted
         style={{
-          width: isMobile ? "250px" : "500px",
+          width: isMobile ? "275px" : "500px",
           height: "auto",
           borderRadius: "10px",
-          marginTop: "230px",
+          marginTop: "250px",
         }}
       />
     </div>

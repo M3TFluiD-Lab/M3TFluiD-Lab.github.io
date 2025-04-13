@@ -17,13 +17,13 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-8 rounded-2xl sm:w-[720px] w-full" // doubled width and padding
       >
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-[460px] flex justify-center items-center bg-black rounded-2xl overflow-hidden">
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="h-full object-contain" // ✅ show full image, no zoom/crop
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
@@ -34,13 +34,13 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
             </div>
           </div>
         </div>
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+        <div className="mt-6">
+          <h3 className="text-white font-bold text-[28px]">{name}</h3>
+          <p className="mt-3 text-secondary text-[16px]">{description}</p>
         </div>
-        <div className="mt-4 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-3">
           {tags.map((tag) => (
-            <p key={tag.name} className={`text-[14px] ${tag.color}`}>
+            <p key={tag.name} className={`text-[15px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
@@ -49,6 +49,7 @@ const ProjectCard = ({ name, description, tags, image, source_code_link }) => {
     </motion.div>
   );
 };
+
 
 const Research = () => {
   return (
