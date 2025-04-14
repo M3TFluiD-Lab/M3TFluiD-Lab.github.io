@@ -16,6 +16,15 @@ import {
   WRF,
   TF,
   PyTorch,
+  DOD,
+  DOE,
+  EPRI,
+  NCDOT,
+  NCROP,
+  NPS,
+  NSF,
+  ONR,
+  MIPS,
 } from "../assets";
 
 export const navLinks = [
@@ -34,6 +43,10 @@ export const navLinks = [
   {
     id: "publications",
     title: "Publications",
+  },
+  {
+    id: "sponsors",
+    title: "Sponsors",
   },
   {
     id: "contact",
@@ -93,7 +106,7 @@ export const members = [
     name: "Shivesh Sharma",
     email: "s.n.sharma@vikes.csuohio.edu",
     description:
-      "I am a PhD Candidate in M³TFluid Lab. My research focuses on developing developing ROM models for Urban Air Mobility using CFD and ML/DL.",
+      "I am a PhD Candidate in M³TFluid Lab. My research focuses on developing ROM models for Urban Air Mobility using CFD and ML/DL.",
     tags: [
       { name: "CFD", color: "blue-text-gradient" },
       { name: "ROM", color: "green-text-gradient" },
@@ -218,5 +231,17 @@ export const publications = [
     authors: "Najian, M., & Goudarzi, N.",
     publisher: "Fluids Engineering Division Summer Meeting, Vol. 88124, p. V001T01A027, July 2024. American Society of Mechanical Engineers.",
   },
+];
+
+export const sponsors = [
+  { name: "DOD", icon: DOD },
+  { name: "DOE", icon: DOE },
+  { name: "EPRI", icon: EPRI },
+  { name: "MIPS", icon: MIPS },
+  { name: "NCDOT", icon: NCDOT },
+  { name: "NCROP", icon: NCROP },
+  { name: "NPS", icon: NPS },
+  { name: "NSF", icon: NSF },
+  { name: "ONR", icon: ONR },
 ];
 

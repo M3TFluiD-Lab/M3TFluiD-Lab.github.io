@@ -24,6 +24,17 @@ import WRF from "./tech/WRF.png";
 import TF from "./tech/TF.png";
 import PyTorch from "./tech/PyTorch.png";
 
+// Import tech logos
+import DOD from "./Sponsors/DOD.jpg";
+import DOE from "./Sponsors/DOE.png";
+import EPRI from "./Sponsors/EPRI.jpg";
+import NCDOT from "./Sponsors/NCDOT.png";
+import NCROP from "./Sponsors/NCROP.png";
+import NPS from "./Sponsors/NPS.jpg";
+import NSF from "./Sponsors/NSF.jpg";
+import ONR from "./Sponsors/ONR.jpg";
+import MIPS from "./Sponsors/MIPS.jpg";
+
 // Import common assets
 import logo from "./logo.png";
 import github from "./github.png";
@@ -47,6 +58,15 @@ export {
   MFSM,
   ROM,
   PyTorch,
+  DOD,
+  DOE,
+  EPRI,
+  NCDOT,
+  NCROP,
+  NPS,
+  NSF,
+  ONR,
+  MIPS,
   logo,
   menu,
   close,
