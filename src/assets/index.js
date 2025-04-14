@@ -16,6 +16,7 @@ import Shivesh from "./Team/Shivesh.jpg";
 // Import project images
 import MFSM from "./projects/MFSM.png";
 import ROM from "./projects/ROM.png";
+import CFDBEM from "./projects/CFDBEM.png";
 
 // Import tech logos
 import OpenFOAM from "./tech/OpenFOAM.png";
@@ -57,6 +58,7 @@ export {
   Shivesh,
   MFSM,
   ROM,
+  CFDBEM,
   PyTorch,
   DOD,
   DOE,

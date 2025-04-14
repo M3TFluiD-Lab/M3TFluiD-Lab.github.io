@@ -3,6 +3,7 @@ import {
   img3,
   MFSM,
   ROM,
+  CFDBEM,
   Javad,
   Navid,
   Maede,
@@ -92,10 +93,10 @@ export const members = [
     name: "Maede Najian",
     email: "m.najian@vikes.csuohio.edu",
     description:
-      "I am a PhD Candidate in M³TFluid Lab. My research focuses on building energy modeling and urban microclimate using CFD and BEM.",
+      "I am a Ph.D. candidate in the M³TFluiD Lab, where my research focuses on the integration of CFD and BEM to investigate the interactions between urban microclimates and building performance.",
     tags: [
-      { name: "CFD", color: "blue-text-gradient" },
-      { name: "WRF", color: "green-text-gradient" },
+      { name: "Energy efficiency", color: "blue-text-gradient" },
+      { name: "Urban physics", color: "green-text-gradient" },
       { name: "Building Energy Modeling", color: "green-text-gradient" },
     ],
     image: Maede,
@@ -141,6 +142,17 @@ export const projects = [
       { name: "TF", color: "green-text-gradient" },
     ],
     image: ROM,
+   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+  },
+  {
+    name: "Integrated Urban Climate and Building Performance Analysis",
+    description:
+      "This project investigates the interaction between urban microclimates and building performance by integrating airflow modeling and energy simulation. It aims to evaluate how urban form, climate conditions, and ventilation impact thermal comfort, energy demand, and environmental quality. The analysis supports climate-adaptive urban design strategies to improve sustainability, resilience, and occupant well-being in dense city environments.",
+    tags: [
+      { name: "Energy Efficiency", color: "blue-text-gradient" },
+      { name: "Urban Microclimate", color: "green-text-gradient" },
+    ],
+    image: CFDBEM,
    // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
   },
   {
