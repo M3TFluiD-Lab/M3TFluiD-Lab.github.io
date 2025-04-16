@@ -17,7 +17,6 @@ import {
   WRF,
   TF,
   PyTorch,
-  DOD,
   DOE,
   EPRI,
   NCDOT,
@@ -247,7 +246,6 @@ export const publications = [
 
 export const sponsors = [
   { name: "NSF", icon: NSF },
-  { name: "DOD", icon: DOD },
   { name: "DOE", icon: DOE },
   { name: "EPRI", icon: EPRI },
   { name: "MIPS", icon: MIPS },

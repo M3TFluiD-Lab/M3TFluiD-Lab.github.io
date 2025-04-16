@@ -26,12 +26,11 @@ import TF from "./tech/TF.png";
 import PyTorch from "./tech/PyTorch.png";
 
 // Import tech logos
-import DOD from "./Sponsors/DOD.jpg";
 import DOE from "./Sponsors/DOE.png";
 import EPRI from "./Sponsors/EPRI.jpg";
 import NCDOT from "./Sponsors/NCDOT.png";
 import NCROP from "./Sponsors/NCROP.png";
-import NPS from "./Sponsors/NPS.jpg";
+import NPS from "./Sponsors/NPS.png";
 import NSF from "./Sponsors/NSF.jpg";
 import ONR from "./Sponsors/ONR.jpg";
 import MIPS from "./Sponsors/MIPS.jpg";
@@ -60,7 +59,6 @@ export {
   ROM,
   CFDBEM,
   PyTorch,
-  DOD,
   DOE,
   EPRI,
   NCDOT,

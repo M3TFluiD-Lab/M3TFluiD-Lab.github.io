@@ -10,7 +10,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 const PublicationCard = ({ title, authors, publisher }) => {
   return (
     <motion.div variants={fadeIn("up", "spring")} className="w-full">
-      <p className="text-white text-[15px] leading-7">
+      <p className="text-white text-[15px] leading-7 text-justify text-center">
         • <span className="font-bold">{title}</span>. <span className="italic">{authors}</span>. {publisher}
       </p>
     </motion.div>
@@ -28,10 +28,9 @@ const Publications = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
+          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify text-center"
         >
-          Below is a collection of our academic publications. These works reflect our contributions to
-          the fields of computational fluid dynamics, building energy modeling, and urban microclimate research.
+          Below is a collection of our academic publications. These works reflect our contributions to the fields of computational fluid dynamics, building energy modeling, and urban microclimate research.
         </motion.p>
       </div>
 

@@ -61,11 +61,8 @@ const Research = () => {
         <h2 className={`${styles.sectionHeadText}`}>Research Areas</h2>
       </motion.div>
       <div className="w-full flex">
-        <motion.p variants={fadeIn("", "", 0.1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
-          Our research focuses on the intersection of computational fluid dynamics, building energy modeling, 
-          and urban microclimate research. We leverage advanced simulation techniques and data-driven approaches 
-          to address complex challenges in these fields, contributing to the development of innovative solutions 
-          for sustainable urban environments.
+        <motion.p variants={fadeIn("", "", 0.1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify text-center">
+          Our research focuses on the intersection of computational fluid dynamics, building energy modeling, and urban microclimate research. We leverage advanced simulation techniques and data-driven approaches to address complex challenges in these fields, contributing to the development of innovative solutions for sustainable urban environments.
         </motion.p>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">

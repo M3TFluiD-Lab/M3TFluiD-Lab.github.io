@@ -42,15 +42,10 @@ const About = () => {
 
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify text-center"
       >
-        The M³TFluid Lab investigates multiscale, multiphysics phenomena in thermofluids, integrating fluid dynamics, heat transfer, and thermodynamic 
-        modeling to support next-generation solutions in infrastructure design, smart city planning, and advanced mobility systems. Our work leverages 
-        computational fluid dynamics (CFD), reduced-order modeling, and artificial intelligence to enable real-time analytics and decision support tools 
-        for complex urban and energy systems. Applications span wind-resilient buildings, environmental flow prediction, thermal comfort modeling, and 
-        aerothermal assessments for next-generation unmanned aerial vehicles.
-        By blending high-fidelity simulations with data-driven models, we aim to improve built environments' safety, reliability, and operational efficiency 
-        under dynamic external and internal loads, supporting planning and technology deployment in increasingly interconnected urban systems.
+        The M³TFluid Lab investigates multiscale, multiphysics phenomena in thermofluids, integrating fluid dynamics, heat transfer, and thermodynamic modeling to support next-generation solutions in infrastructure design, smart city planning, and advanced mobility systems. Our work leverages computational fluid dynamics (CFD), reduced-order modeling, and artificial intelligence to enable real-time analytics and decision support tools for complex urban and energy systems. Applications span wind-resilient buildings, environmental flow prediction, thermal comfort modeling, and aerothermal assessments for next-generation unmanned aerial vehicles.
+        By blending high-fidelity simulations with data-driven models, we aim to improve built environments' safety, reliability, and operational efficiency under dynamic external and internal loads, supporting planning and technology deployment in increasingly interconnected urban systems.
       </motion.p>
 
       <motion.div
@@ -66,7 +61,7 @@ const About = () => {
               <p className="text-white font-semibold text-[16px] leading-tight">
                 Multi-Fidelity CFD for Thermofluid Systems
               </p>
-              <p className="text-secondary text-[15px] leading-snug">
+              <p className="text-secondary text-[15px] leading-snug text-justify text-center">
                 Physics-based simulations combining high- and low-fidelity CFD to model flow, heat, and energy interactions across scales.
               </p>
             </div>
@@ -78,7 +73,7 @@ const About = () => {
               <p className="text-white font-semibold text-[16px] leading-tight">
                 Surrogate Modeling and Physics-Informed Machine Learning
               </p>
-              <p className="text-secondary text-[15px] leading-snug">
+              <p className="text-secondary text-[15px] leading-snug text-justify text-center">
                 Hybrid frameworks that integrate simulation data with ML and optimization tools for fast and interpretable predictions.
               </p>
             </div>
@@ -90,7 +85,7 @@ const About = () => {
               <p className="text-white font-semibold text-[16px] leading-tight">
                 System Integration and Immersive Visualization
               </p>
-              <p className="text-secondary text-[15px] leading-snug">
+              <p className="text-secondary text-[15px] leading-snug text-justify text-center">
                 Reduced-order models, digital twins, and VR/AR interfaces for real-time analysis, planning, and interactive decision support.
               </p>
             </div>

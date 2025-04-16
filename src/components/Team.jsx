@@ -59,7 +59,7 @@ const Team = () => {
         <h2 className={`${styles.sectionHeadText}`}>Members</h2>
       </motion.div>
       <div className="w-full flex">
-        <motion.p variants={fadeIn("", "", 0.1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]">
+        <motion.p variants={fadeIn("", "", 0.1)} className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify text-center">
           Active members of our team are listed below. We are a group of researchers and engineers who are passionate about using machine learning and computational fluid dynamics to solve real-world problems. Our team is dedicated to advancing the field of wind engineering and providing innovative solutions for high-rise buildings.
         </motion.p>
       </div>
