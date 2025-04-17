@@ -25,6 +25,7 @@ import {
   NSF,
   ONR,
   MIPS,
+  GSRA,
 } from "../assets";
 
 export const navLinks = [
@@ -43,6 +44,10 @@ export const navLinks = [
   {
     id: "publications",
     title: "Publications",
+  },
+  {
+    id: "news",
+    title: "News",
   },
   {
     id: "sponsors",
@@ -243,6 +248,17 @@ export const publications = [
     publisher: "Fluids Engineering Division Summer Meeting, Vol. 88124, p. V001T01A027, July 2024. American Society of Mechanical Engineers.",
   },
 ];
+
+export const news = [
+  {
+    title: "GSRA Grant Awarded to PhD Researchers",
+    description: "We’re proud to announce that two of our exceptional PhD students, Javad Mortazavian and Maede Najian, have been awarded the GSRA grant to fund their cutting-edge research on multi-objective prediction of urban microclimate wind patterns. Their work integrates multi-fidelity surrogate modeling (MFSM) with enhanced Building Energy Modeling (BEM) for neighborhood-scale microclimate analysis.",
+    image: GSRA,
+    tags: ["GSRA2025", "UrbanMicroclimate", "SurrogateModeling", "PhDResearch", "WindEngineering"]
+  },
+];
+
+
 
 export const sponsors = [
   { name: "NSF", icon: NSF },

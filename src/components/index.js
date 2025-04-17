@@ -12,6 +12,7 @@ import Tech from "./Tech";
 import Team from "./Team";
 import Research from "./Research";
 import Publications from "./Publications";
+import News from "./News";
 import Sponsors from "./Sponsors";
 import Contact from "./Contact";
 
@@ -23,6 +24,7 @@ export {
   Team,
   Research,
   Publications,
+  News,
   Sponsors,
   Contact,
   EarthCanvas,
