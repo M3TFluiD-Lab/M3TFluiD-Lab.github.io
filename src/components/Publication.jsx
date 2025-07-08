@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { publications } from "../constants";
+import { publication } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const PublicationCard = ({ title, authors, publisher }) => {
@@ -17,12 +17,12 @@ const PublicationCard = ({ title, authors, publisher }) => {
   );
 };
 
-const Publications = () => {
+const Publication = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Our Work in Journals & Conferences</p>
-        <h2 className={styles.sectionHeadText}>Publications</h2>
+        <h2 className={styles.sectionHeadText}>Publication</h2>
       </motion.div>
 
       <div className="w-full flex">
@@ -35,7 +35,7 @@ const Publications = () => {
       </div>
 
       <div className="mt-20 flex flex-wrap gap-7">
-        {publications.map((pub, index) => (
+        {publication.map((pub, index) => (
           <PublicationCard key={`pub-${index}`} {...pub} />
         ))}
       </div>
@@ -43,6 +43,6 @@ const Publications = () => {
   );
 };
 
-const WrappedPublications = SectionWrapper(Publications, 'publications');
+const WrappedPublication = SectionWrapper(Publication, 'publication');
 
-export default WrappedPublications;
+export default WrappedPublication;

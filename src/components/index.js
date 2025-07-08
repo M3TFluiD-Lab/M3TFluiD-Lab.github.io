@@ -11,7 +11,7 @@ import About from "./About";
 import Tech from "./Tech";
 import Team from "./Team";
 import Research from "./Research";
-import Publications from "./Publications";
+import Publication from "./Publication";
 import News from "./News";
 import Sponsors from "./Sponsors";
 import Contact from "./Contact";
@@ -23,7 +23,7 @@ export {
   Tech,
   Team,
   Research,
-  Publications,
+  Publication,
   News,
   Sponsors,
   Contact,

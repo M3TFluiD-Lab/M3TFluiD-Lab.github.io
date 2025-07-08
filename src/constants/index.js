@@ -42,8 +42,8 @@ export const navLinks = [
     title: "Research",
   },
   {
-    id: "publications",
-    title: "Publications",
+    id: "publication",
+    title: "Publication",
   },
   {
     id: "news",
@@ -201,7 +201,7 @@ export const technologies = [
   { name: "TF", icon: TF },
 ];
 
-export const publications = [
+export const publication = [
   {
     title: "Urban airflow analysis using reduced-order modeling",
     authors: "Sharma, S.N. and Goudarzi, N.",
