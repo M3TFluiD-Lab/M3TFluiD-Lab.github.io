@@ -1,16 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="./src/assets/logo.png" alt="logo">
-  <title>M³TFluidLab</title>
-</head>
-<body>
-  <noscript>
-    <p>This website requires JavaScript to function properly.</p>
-  </noscript>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx" defer></script>
-</body>
+  <head>
+    <!-- must be first in <head> -->
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./src/assets/logo.png" alt="logo">
+
+    <title>M³TFluiD Lab</title>
+    <meta name="description" content="M³TFluiD Lab at Cleveland State University develops multi-fidelity CFD, reduced-order, and machine learning models for urban microclimate, air quality, wind engineering, and sustainable energy systems.">
+    <link rel="canonical" href="https://m3tfluid-lab.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="M³TFluiD Lab">
+    <meta property="og:description" content="CFD, reduced-order, and ML models powering digital twins for air quality, urban microclimate, wind engineering, and energy systems.">
+    <meta property="og:url" content="https://m3tfluid-lab.github.io/">
+    <meta property="og:image" content="/og.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="M³TFluiD Lab">
+    <meta name="twitter:description" content="Digital twins for clean air, resilient cities, and high-performance energy systems.">
+    <meta name="twitter:image" content="/og.jpg">
+  </head>
+  <body>
+    <!-- Basic noscript fallback (must be in <body>, not <head>) -->
+    <noscript>
+      <div style="max-width:720px;margin:1rem auto;padding:1rem;font:14px/1.6 system-ui">
+        M³TFluiD Lab focuses on multi-fidelity CFD, reduced-order modeling, and machine learning
+        for urban microclimate, air quality, wind engineering, and hybrid energy systems.
+        Please enable JavaScript for the full interactive site.
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
