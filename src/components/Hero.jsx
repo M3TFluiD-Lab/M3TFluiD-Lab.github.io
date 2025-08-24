@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import Typewriter from "typewriter-effect";
+import LabName from "./LabName";
+
+<h2>Welcome to the <LabName /></h2>
 
 const Hero = () => {
   return (

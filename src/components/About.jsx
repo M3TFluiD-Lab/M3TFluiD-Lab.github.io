@@ -5,6 +5,8 @@ import { services } from '../constants';
 import { SectionWrapper } from '../hoc';
 import { styles } from '../styles';
 import { fadeIn, textVariant } from '../utils/motion';
+import LabName from "./LabName";
+
 
 const ServiceCard = ({ index, title, icon }) => (
   <Tilt className="xs:w-[320px] w-full"> {/* slight width increase for layout */}

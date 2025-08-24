@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { close, logo, menu } from '../assets';
 import { navLinks } from '../constants';
 import { styles } from '../styles';
+import LabName from "./LabName";
+
+// inside your return
+<h1><LabName /></h1>
 
 const Navbar = () => {
   const [active, setActive] = useState('');
