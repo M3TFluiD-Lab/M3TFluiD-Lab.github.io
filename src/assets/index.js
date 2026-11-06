@@ -17,6 +17,7 @@ import Shivesh from "./Team/Shivesh.jpg";
 import MFSM from "./projects/MFSM.png";
 import ROM from "./projects/ROM.png";
 import CFDBEM from "./projects/CFDBEM.png";
+import Microgrid from "./projects/Microgrid.png";
 
 // Import tech logos
 import OpenFOAM from "./tech/OpenFOAM.png";
@@ -28,6 +29,7 @@ import PyTorch from "./tech/PyTorch.png";
 // Import tech logos
 import DOE from "./Sponsors/DOE.png";
 import EPRI from "./Sponsors/EPRI.jpg";
+import DOED from "./Sponsors/DOED.png";
 import NCDOT from "./Sponsors/NCDOT.png";
 import NCROP from "./Sponsors/NCROP.png";
 import NPS from "./Sponsors/NPS.png";
@@ -61,6 +63,7 @@ export {
   CFDBEM,
   PyTorch,
   DOE,
+  DOED,
   EPRI,
   NCDOT,
   NCROP,
@@ -73,4 +76,5 @@ export {
   close,
   eduskill,
   GSRA,
+  Microgrid,
 };

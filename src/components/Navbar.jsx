@@ -1,80 +1,105 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { close, logo, menu } from '../assets';
-import { navLinks } from '../constants';
-import { styles } from '../styles';
-import LabName from "./LabName";
 
-// inside your return
-<h1><LabName /></h1>
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { menu, close } from "../assets";
+import { siteNavigation as nav } from "../constants";
 
-const Navbar = () => {
-  const [active, setActive] = useState('');
-  const [toggle, setToggle] = useState(false);
 
-  useEffect(() => {
-    if (toggle) {
-      setActive('');
-    }
-  }, [toggle]);
 
-  const renderNavLinks = (isSecondary) => (
-    <ul className={`list-none ${isSecondary ? 'flex sm:hidden' : 'hidden sm:flex'} flex-row gap-6`}>
-      {navLinks.map((link) => (
-        <li
-          key={link.id}
-          className={`${
-            active === link.title ? 'text-white' : isSecondary ? 'text-secondary' : 'text-white'
-          } hover:text-white text-[20px] font-medium cursor-pointer`}
-          onClick={() => {
-            setActive(link.title);
-            if (isSecondary) {
-              setToggle(false);
-            }
-          }}
-        >
-          <a href={`#${link.id}`}>{link.title}</a>
-        </li>
-      ))}
-    </ul>
-  );
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const linkClass = ({ isActive }) =>
+    `block px-2 py-2 transition-colors ${
+      isActive
+        ? "text-white font-semibold border-b-[3px] border-emerald-400"
+        : "text-white/70 hover:text-white"
+    }`;
 
   return (
-    <nav className={`${styles.paddingX} w-full flex items-center py-3 fixed top-0 z-20 bg-primary`}>
-      <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 h-20 border-b border-white/10 backdrop-blur"
+      style={{
+        background:
+          "linear-gradient(105deg, #032A23 0%, #075A40 48%, #087C65 100%)",
+      }}
+    >
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-5 px-6">
         <Link
           to="/"
-          className="flex items-center gap-2"
-          onClick={() => {
-            setActive('');
-            window.scrollTo(0, 0);
-          }}
+          className="flex shrink-0 items-center gap-3"
+          onClick={() => setOpen(false)}
         >
-          <img src={logo} alt="logo" className="w-26 h-20 object-contain" />
-          <p className="text-white text-[20px] font-bold cursor-pointer flex">
-          M³TFluid&nbsp;
-            <span className="sm:block hidden">Lab</span>
-          </p>
-        </Link>
-        {renderNavLinks(false)}
-        <div className="sm:hidden flex flex-1 justify-end items-center">
           <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[18px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
+            src={`${import.meta.env.BASE_URL}M3TFluiD_Lab_logo_white_transparent.svg`}
+            alt="M³TFluiD Lab"
+            className="h-auto w-[210px] object-contain sm:w-[250px]"
           />
-          <div
-            className={`p-4 black-gradient absolute top-14 right-0 mx-2 my-2 min-w-[120px] z-10 rounded-xl foggy-glass ${
-              toggle ? 'flex' : 'hidden'
-            }`}
-          >
-            {renderNavLinks(true)}
-          </div>
-        </div>
+        </Link>
+
+        {/* Desktop navigation */}
+        <ul className="hidden items-center gap-5 text-[15px] xl:flex">
+          {nav.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                end={item.to === "/"}
+                onClick={() => setOpen(false)}
+                className={
+                  item.button
+                    ? "rounded-full border border-emerald-400 px-5 py-2 text-white transition-colors hover:bg-emerald-400/10"
+                    : linkClass
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          className="p-2 text-white xl:hidden"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen((previous) => !previous)}
+        >
+          <img
+            src={open ? close : menu}
+            alt=""
+            className="h-6 w-6"
+          />
+        </button>
       </div>
+
+      {/* Mobile navigation */}
+      {open && (
+        <div
+          id="mobile-navigation"
+          className="border-t border-white/10 bg-[#00382F] shadow-xl xl:hidden"
+        >
+          <ul className="space-y-2 px-6 py-4">
+            {nav.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  end={item.to === "/"}
+                  className={
+                    item.button
+                      ? "block rounded-full border border-emerald-400 px-5 py-2 text-center text-white transition-colors hover:bg-emerald-400/10"
+                      : linkClass
+                  }
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </nav>
   );
-};
-
-export default Navbar;
+}

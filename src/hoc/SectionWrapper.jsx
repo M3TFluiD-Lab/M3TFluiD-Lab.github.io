@@ -1,20 +1,24 @@
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { staggerContainer } from "../utils/motion";
+// src/hoc/SectionWrapper.jsx
+import React from "react";
 
-const StarWrapper = (Component, idName) => () => (
-  <motion.section
-    variants={staggerContainer()}
-    initial="hidden"
-    whileInView="show"
-    viewport={{ once: true, amount: 0.25 }}
-    className={`${styles.padding} max-w-7xl mx-auto relative z-0`}
-  >
-    <span className="hash-span" id={idName}>
-      &nbsp;
-    </span>
-    <Component />
-  </motion.section>
-);
+/**
+ * Higher-order component that wraps a section with an id and common layout.
+ * Usage:
+ *   const Wrapped = SectionWrapper(MyComponent, "about");
+ *   export default Wrapped;
+ */
+const SectionWrapper = (Component, idName) => {
+  const HOC = () => (
+    <section id={idName} className="relative z-0">
+      <Component />
+    </section>
+  );
 
-export default StarWrapper;
+  HOC.displayName = `SectionWrapper(${
+    Component.displayName || Component.name || "Component"
+  })`;
+
+  return HOC;
+};
+
+export default SectionWrapper;

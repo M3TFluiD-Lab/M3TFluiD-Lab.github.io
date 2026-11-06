@@ -1,153 +1,243 @@
-import React, { useRef, useState } from "react";
+
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import "../index.css";
 
-const InputField = ({ label, value, onChange, placeholder, name, type }) => (
-  <label className="flex flex-col">
-    <span className="text-white font-medium mb-4">{label}</span>
+const fieldClass =
+  "w-full rounded-lg border border-white/10 bg-[#101C18] px-4 py-2.5 text-sm text-white placeholder:text-[#82968D] outline-none transition-colors focus:border-[#46C99C] focus:ring-1 focus:ring-[#46C99C]/30";
+
+const InputField = ({
+  label,
+  value,
+  onChange,
+  placeholder,
+  name,
+  type = "text",
+  required = false,
+}) => (
+  <label className="flex flex-col gap-2">
+    <span className="text-sm font-medium text-[#D6E8DF]">
+      {label}
+    </span>
+
     <input
       type={type}
       name={name}
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+      className={fieldClass}
+      required={required}
     />
   </label>
 );
 
-const Contact = () => {
-  const formRef = useRef();
+function Contact() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
+
   const [loading, setLoading] = useState(false);
-  const [emailError, setEmailError] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [confirmation, setConfirmation] = useState("");
+
+  const [feedback, setFeedback] = useState({
+    type: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({
-      ...form,
+
+    setForm((previous) => ({
+      ...previous,
       [name]: value,
-    });
+    }));
   };
 
-  const validateEmail = (email) => {
-    const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    return regex.test(email);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEmailError("");
-    setNameError("");
-    setConfirmation("");
 
-    if (!validateEmail(form.email)) {
-      setEmailError("Please enter a valid email address.");
+    if (loading) return;
+
+    setFeedback({ type: "", message: "" });
+
+    const name = form.name.trim();
+    const email = form.email.trim();
+    const subject = form.subject.trim();
+    const message = form.message.trim();
+
+    if (!name || !email || !subject) {
+      setFeedback({
+        type: "error",
+        message: "Please complete all required fields.",
+      });
       return;
     }
 
-    if (!form.name.trim()) {
-      setNameError("Name is required.");
+    const validEmail =
+      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(email);
+
+    if (!validEmail) {
+      setFeedback({
+        type: "error",
+        message: "Please enter a valid email address.",
+      });
       return;
     }
 
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_09jisad",
-        "template_5jw0t6t",
+    try {
+      await emailjs.send(
+        "service_fjx21y5",
+        "template_ofeh4v2",
         {
-          from_name: form.name,
-          to_name: "Javad Mortazavian",
-          from_email: form.email,
-          to_email: "sjavadmortazavian@gmail.com",
-          message: form.message,
+          from_name: name,
+          from_email: email,
+          subject,
+          message,
+          to_name: "Navid Goudarzi",
+          to_email: "navidgoudarz@gmail.com",
         },
-        "vNhjDZ99IgpGcPw0b"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          setConfirmation("Thank you! I will get back to you as soon as possible.");
+        "-7njvFb28jaN71_lg"
+      );
 
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        }
-      )
-      .catch((error) => {
-        setLoading(false);
-        console.error(error);
-        setConfirmation("Something went wrong. Please try again. :/");
+      setFeedback({
+        type: "success",
+        message: "Thank you! Your message has been sent successfully.",
       });
+
+      setForm({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      setFeedback({
+        type: "error",
+        message:
+          "Your message could not be sent. Please try again or contact us by email.",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}>
-      <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="flex-[0.75] bg-black-100 p-8 rounded-2xl">
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact US</h3>
+    <section className="w-full pt-14 text-white">
+      <div className="w-full">
+        <motion.div variants={slideIn("left", "tween", 0.1, 0.7)}>
 
-        <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
-          <InputField
-            label="Your Name"
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Insert Your name here..."
-            type="text"
-          />
-          {nameError && <span className="text-red-500">{nameError}</span>}
+          <h2 className="mt-3 text-3xl font-bold md:text-4xl">
+            Get in Touch
+          </h2>
 
-          <InputField
-            label="Email Address"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="What's your email address?"
-            type="email"
-          />
-          {emailError && <span className="text-red-500">{emailError}</span>}
+          <p className="mt-4 text-[15px] leading-7 text-[#B9CBC3]">
+            Propose a research collaboration, ask about graduate opportunities, or start a conversation with our lab.
+          </p>
+        </motion.div>
 
-          <InputField
-            label="Your Message"
-            name="message"
-            value={form.message}
-            onChange={handleChange}
-            placeholder="What you want to say...?"
-            type="text"
-          />
-
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+        <div className="mt-9 grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <motion.div
+            variants={slideIn("left", "tween", 0.2, 0.8)}
+            className="w-full max-w-[580px] rounded-2xl border border-white/10 bg-[#0D1713] p-5 sm:p-7"
           >
-            {loading ? "Sending..." : "Send"}
-          </button>
-          {confirmation && <p className="text-green-500">{confirmation}</p>}
-        </form>
-      </motion.div>
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4"
+            >
+              <InputField
+                label="Your Name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Enter your name"
+                required
+              />
 
-      <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
-        <EarthCanvas />
-      </motion.div>
-    </div>
+              <InputField
+                label="Email Address"
+                name="email"
+                type="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Enter your email address"
+                required
+              />
+
+              <InputField
+                label="Subject"
+                name="subject"
+                value={form.subject}
+                onChange={handleChange}
+                placeholder="What is your message about?"
+                required
+              />
+
+              <label className="flex flex-col gap-2">
+                <span className="text-sm font-medium text-[#D6E8DF]">
+                  Your Message
+                </span>
+
+                <textarea
+                  name="message"
+                  rows={4}
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Write your message here..."
+                  className={`${fieldClass} resize-y`}
+                />
+              </label>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-fit rounded-lg bg-[#28B887] px-7 py-2.5 text-sm font-bold text-[#06120D] transition-colors hover:bg-[#55D9AD] disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+
+              {feedback.message && (
+                <p
+                  role="status"
+                  aria-live="polite"
+                  className={`text-sm ${
+                    feedback.type === "success"
+                      ? "text-[#75E2B5]"
+                      : "text-red-400"
+                  }`}
+                >
+                  {feedback.message}
+                </p>
+              )}
+            </form>
+          </motion.div>
+
+          <motion.div
+            variants={slideIn("right", "tween", 0.2, 0.8)}
+            className="flex w-full items-center justify-center"
+          >
+            <div className="w-full max-w-lg">
+              <div className="relative h-[280px] w-full sm:h-[350px] lg:h-[390px]">
+                <EarthCanvas />
+              </div>
+
+             
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
   );
-};
+}
 
 export default SectionWrapper(Contact, "contact");

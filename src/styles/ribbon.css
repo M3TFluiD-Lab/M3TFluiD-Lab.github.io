@@ -1,0 +1,56 @@
+/* src/styles/ribbon.css */
+
+/* the moving track */
+.ribbon-track {
+  display: inline-flex;
+  gap: 0.75rem;             /* space between chips */
+  padding-left: 0.75rem;
+  width: max-content;       /* shrink to content */
+  animation: ribbon-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+/* pause when user hovers (optional but nice) */
+.ribbon-track:hover {
+  animation-play-state: paused;
+}
+
+/* the “chip” style */
+.chip {
+  white-space: nowrap;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0.55rem 0.85rem;
+  border-radius: 9999px;
+  color: #e5e7eb;                  /* zinc-200 */
+  border: 1px solid #3f3f46;       /* zinc-700 */
+  background: rgba(24,24,27,0.6);  /* zinc-900/60 */
+  backdrop-filter: blur(4px);
+}
+.chip-sm {
+  font-size: 0.82rem;
+  padding: 0.4rem 0.7rem;
+}
+
+/* infinite horizontal loop: because we duplicated items,
+   moving left by 50% creates a seamless scroll */
+@keyframes ribbon-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+/* Optional: container + fade edges (if you used them) */
+.relative.overflow-hidden.py-3 { position: relative; overflow: hidden; padding-top: .75rem; padding-bottom: .75rem; }
+/* Fade edges for the scrolling ribbons */
+.mask-gradient-ribbon {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.type-caret {
+  display: inline-block;
+  margin-left: 2px;
+  animation: caret-blink 1s step-end infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}

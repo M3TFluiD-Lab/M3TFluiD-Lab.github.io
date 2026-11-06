@@ -1,23 +1,20 @@
+// src/constants/index.js
 import {
   img1,
   img3,
   MFSM,
   ROM,
   CFDBEM,
-  Javad,
-  Navid,
   Maede,
   Shivesh,
   logo,
-  edunet,
-  mathwork,
-  eduskill,
   OpenFOAM,
   Ansys,
   WRF,
   TF,
   PyTorch,
   DOE,
+  DOED,
   EPRI,
   NCDOT,
   NCROP,
@@ -26,248 +23,509 @@ import {
   ONR,
   MIPS,
   GSRA,
+  Microgrid,
 } from "../assets";
 
-export const navLinks = [
-  {
-    id: "about",
-    title: "About",
-  },
-  {
-    id: "team",
-    title: "Team",
-  },
-  {
-    id: "research",
-    title: "Research",
-  },
-  {
-    id: "publication",
-    title: "Publication",
-  },
-  {
-    id: "news",
-    title: "News",
-  },
-  {
-    id: "sponsors",
-    title: "Sponsors",
-  },
-  {
-    id: "contact",
-    title: "Contact",
-  },
+/* ------------------------------- NAV LINKS ------------------------------- */
+export const siteNavigation = [
+  { to: "/", label: "Home" },
+  { to: "/team", label: "Team" },
+  { to: "/research", label: "Research" },
+  { to: "/education", label: "Experiential Learning" },
+  { to: "/publications", label: "Publications" },
+  { to: "/facilities", label: "Facilities" },
+  { to: "/news", label: "News" },
+  { to: "/contact", label: "Contact", button: true },
 ];
 
+// Compatibility export. Navigation is maintained in siteNavigation above.
+export const navLinks = siteNavigation.map(({ to, label }) => ({
+  id: to === "/" ? "home" : to.slice(1), title: label, to,
+}));
+
+/* -------------------------------- SERVICES ------------------------------- */
 export const services = [
   { title: "Neighborhood", icon: img1 },
-  { title: "High-Rise Building", icon: img3},
-
+  { title: "High-Rise Building", icon: img3 },
 ];
 
+/* -------------------------------- MEMBERS -------------------------------- */
 
 export const members = [
   {
     name: "Dr. Navid Goudarzi",
     email: "n.goudarzi@csuohio.edu",
-    description:
-      "Role: PI",
-    tags: [
-      { name: "Urban Microclimate", color: "blue-text-gradient" },
-      { name: "Energy Efficiency", color: "green-text-gradient" },
-      { name: "Building Energy Modeling", color: "green-text-gradient" },
+    role: "Principal Investigator (PI)",
+    affiliation: "Assistant Professor, Mechanical Engineering, Cleveland State University",
+    additionalRole: "Co-Director, Center for Integrated Modeling for Energy, Resiliency, and Sustainability (IERS)",
+    additionalRoleUrl: "https://academic.csuohio.edu/iers-center/",
+    bio: "Dr. Navid Goudarzi leads the M³TFluiD Lab and co-directs the IERS Center at Cleveland State University. An NSF CAREER recipient, he brings more than 15 years of interdisciplinary research and project leadership across academia, industry, and government. His work combines experiments, physics-based simulation, multi-fidelity surrogate modeling, and scientific machine learning to understand interacting fluid, thermal, and energy systems across scales. He works with partners on applied problems in urban environments, energy, manufacturing, and advanced air mobility, connecting component-level physics with system-level performance and practical engineering decisions.",
+    projects: [
+      "MFSM",
+      "ROM-ML",
+      "UMC-BEM/BIM-ML",
+      "Microgrids",
+      "AAM",
+      "AirQuality",
     ],
-    image: Navid,
-    //source_code_link: "https://javad-mortazavian.github.io/",
+    image: `${import.meta.env.BASE_URL}navid-goudarzi.png`,
+    links: {
+      linkedin: "https://www.linkedin.com/in/navid-goudarzi-4656b761/",
+      scholar:
+        "https://scholar.google.com/citations?user=F3_tTU4AAAAJ&hl=en",
+    },
+    profile_url: "",
   },
-  {
-    name: "Javad Mortazavian",
-    email: "s.mortazaviannajafabadi@vikes.csuohio.edu",
-    description:
-      "I am a PhD Candidate in M³TFluid Lab. My research focuses on developing a multi-fidelity surrogate model for predicting wind loads on high-rise buildings using CFD and ML/DL.",
-    tags: [
-      { name: "CFD", color: "blue-text-gradient" },
-      { name: "SciML", color: "green-text-gradient" },
-      { name: "Surrogate Modeling", color: "green-text-gradient" },
-    ],
-    image: Javad,
-    source_code_link: "https://javad-mortazavian.github.io/",
-  },
+
+
+
   {
     name: "Maede Najian",
     email: "m.najian@vikes.csuohio.edu",
-    description:
-      "I am a Ph.D. candidate in the M³TFluiD Lab, where my research focuses on the integration of CFD and BEM to investigate the interactions between urban microclimates and building performance.",
-    tags: [
-      { name: "Energy efficiency", color: "blue-text-gradient" },
-      { name: "Urban physics", color: "green-text-gradient" },
-      { name: "Building Energy Modeling", color: "green-text-gradient" },
-    ],
+    role: "PhD Candidate",
+    expectedGraduation: "December 2027",
+    projects: ["UMC-BEM/BIM-ML", "AirQuality"],
     image: Maede,
-    //source_code_link: "https://javad-mortazavian.github.io/",
   },
 
   {
     name: "Shivesh Sharma",
     email: "s.n.sharma@vikes.csuohio.edu",
+    role: "PhD Candidate",
+    expectedGraduation: "December 2027",
+    projects: ["ROM-ML", "AAM"],
+    image: Shivesh,
+  },
+
+  {
+    name: "Brian Kohut",
+    role: "PhD Candidate",
+    expectedGraduation: "May 2028",
+    projects: [
+      "Data Assimilation",
+      "Modeling & Simulation",
+      "Scientific Discovery",
+    ],
+      image: "/brian-kohut.png",
+  },
+  {
+    name: "Lokesh Kantam",
+    role: "MSc Student",
+    projects: [],
+    image: "",
+  },
+  {
+    name: "Khushbuben Barot",
+    role: "MSc Student (Co-advised)",
+    projects: ["Virtual Reality (VR)"],
+    image: "/khushbuben-barot.png",
+  },
+  {
+  name: "Julio Mendez",
+  role: "Research Associate",
+  projects: [
+    "Computational Fluid Dynamics",
+    "Chemical Vapor Deposition",
+    "Multiphysics Modeling",
+  ],
+  image: "/Julio-Mendez.png",
+},
+  {
+    name: "Eman Hassan",
+    role: "Research Associate",
+    projects: [
+      "Computational Fluid Dynamics",
+      "Chemical Vapor Deposition",
+    ],
+    image: `${import.meta.env.BASE_URL}eman-hassan.png`,
+  },
+];
+
+/* -------------------------------- PROJECTS ------------------------------- */
+/* Short card-ready descriptions (6 cards) */
+export const projects = [
+  // ——— FOUNDATIONAL ———
+  {
+    name: "Multi‑Fidelity Surrogate Modeling (MFSM)",
     description:
-      "I am a PhD Candidate in M³TFluid Lab. My research focuses on developing ROM models for Urban Air Mobility using CFD and ML/DL.",
+      "MFSM blends low‑ and high‑fidelity CFD with physics‑informed ML for fast, interpretable prediction of local turbulent flow and wind loads. Current studies include non‑homogeneous inflow, single‑tower and cluster layouts, and validation against BLWT pressure‑tap data.",
     tags: [
       { name: "CFD", color: "blue-text-gradient" },
-      { name: "ROM", color: "green-text-gradient" },
-      { name: "Urban Air Mobility", color: "green-text-gradient" },
-    ],
-    image: Shivesh,
-    //source_code_link: "https://javad-mortazavian.github.io/",
-  },
-];
-
-export const projects = [
-  {
-    name: "Multi-Fidelity Surrogate Modeling (MFSM) and Real-Time Prediction",
-    description:
-      "We explore hybrid modeling frameworks that combine a wide range of low-fidelity models with a selected number of high-fidelity simulations, enhanced through physics-informed machine learning. These tools provide fast, scalable, and interpretable predictions for dynamic flow environments, enabling near-real-time control and design optimization. We also integrate digital twin concepts to support continuously updating simulations that reflect real-world dynamics.",
-    tags: [
-      { name: "OpenFOAM", color: "blue-text-gradient" },
-      { name: "AI/ML", color: "blue-text-gradient" },
-      { name: "PyTorch", color: "green-text-gradient" },
+      { name: "PIML", color: "green-text-gradient" },
+      { name: "OpenFOAM", color: "green-text-gradient" },
     ],
     image: MFSM,
-   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
   },
   {
-    name: "Reduced-Order Modeling and Data-Driven Workflows",
+    name: "Integrated ROM–ML for Flow Fields",
     description:
-      "We apply dimensionality reduction techniques and model reduction strategies to construct surrogate models that preserve essential physical behavior while improving computational efficiency. These approaches accelerate design cycles and expand simulation accessibility for interdisciplinary applications.",
+      "ROM combines dimensionality and model‑reduction methods (POD/DMD/SPOD) with ML to reconstruct, forecast, and compress flow fields efficiently while preserving coherent structures and key physics.",
     tags: [
-      { name: "ANSYS", color: "blue-text-gradient" },
+      { name: "POD/DMD/SPOD", color: "blue-text-gradient" },
       { name: "Python", color: "green-text-gradient" },
       { name: "MATLAB", color: "green-text-gradient" },
-      { name: "TF", color: "green-text-gradient" },
     ],
     image: ROM,
-   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
   },
   {
-    name: "Integrated Urban Climate and Building Performance Analysis",
+    name: "UMC–BEM/BIM–ML Integration",
     description:
-      "This project investigates the interaction between urban microclimates and building performance by integrating airflow modeling and energy simulation. It aims to evaluate how urban form, climate conditions, and ventilation impact thermal comfort, energy demand, and environmental quality. The analysis supports climate-adaptive urban design strategies to improve sustainability, resilience, and occupant well-being in dense city environments.",
+      "Couples urban microclimate (UMC) CFD with BEM/BIM workflows (Ladybug/Honeybee/Butterfly) and ML to study heat waves, ventilation, and comfort. Supports multi‑scale studies from single buildings to dense neighborhoods.",
     tags: [
-      { name: "Energy Efficiency", color: "blue-text-gradient" },
-      { name: "Urban Microclimate", color: "green-text-gradient" },
+      { name: "BEM/BIM", color: "blue-text-gradient" },
+      { name: "OpenFOAM", color: "green-text-gradient" },
+      { name: "LB‑HB‑BF", color: "green-text-gradient" },
     ],
     image: CFDBEM,
-   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
+  },
+
+  // ——— APPLIED ———
+  {
+    name: "Microgrid Planning & Energy Systems",
+    description:
+      "System‑level analysis for hybrid wind–solar microgrids with stochastic demand and weather. Techno‑economic assessment, siting, and sizing with uncertainty quantification for resilient, high‑efficiency operation.",
+    tags: [
+      { name: "EnergySystems", color: "blue-text-gradient" },
+      { name: "UQ", color: "green-text-gradient" },
+      { name: "Optimization", color: "green-text-gradient" },
+    ],
+    image: Microgrid,
   },
   {
-    name: "Heat Transfer and Energy Systems Analysis",
-    description:"Our work includes modeling and analysis of convective, conductive, and radiative heat transfer phenomena in complex geometries. Using tools like GIS and WRF, we explore spatially informed environmental dynamics for building envelope studies, HVAC optimization, and energy efficiency evaluations across multiple scales.",
-     tags: [
-      { name: "GIS", color: "blue-text-gradient" },
-      { name: "WRF", color: "green-text-gradient" },
+    name: "Advanced Air Mobility (AAM) & Wind Hazards",
+    description:
+      "Local wind‑aware routing and waypoint planning for AAM/UAVs under isothermal conditions, using CFD and ROM‑ML surrogates to characterize profiles, gusts, and wake interactions for safe operations.",
+    tags: [
+      { name: "ANSYS", color: "blue-text-gradient" },
+      { name: "UAV/AAM", color: "green-text-gradient" },
+      { name: "ROM‑ML", color: "green-text-gradient" },
     ],
     image: logo,
-   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
   },
-
   {
-    name: "Aerothermal Systems and Advanced Mobility Platforms",
-    description:" We explore fluid-thermal interactions in emerging transportation systems such as UAVs and urban air mobility vehicles. Our research supports aerodynamic optimization, thermal protection strategies, and energy-aware design of high-performance mobility technologies. Enhanced visualization capabilities, including VR/AR integration, are used to interpret complex simulation data and improve design feedback loops.",
-     tags: [
-      { name: "VR/AR", color: "blue-text-gradient" },
-      { name: "UAV", color: "green-text-gradient" },
+    name: "Air Quality & Emissions with Sensor Fusion",
+    description:
+      "Integrates satellite products with ground sensor networks and CFD/ROM to infer urban dispersion and exposure. Supports interactive DT/VR maps for campus‑ and city‑scale decision support.",
+    tags: [
+      { name: "AirQuality", color: "blue-text-gradient" },
+      { name: "Sensors+Sat", color: "green-text-gradient" },
+      { name: "DT/VR", color: "green-text-gradient" },
     ],
     image: logo,
-   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
-  },
-  {
-    name: "Local Turbulent Flow and Thermal Interaction Modeling",
-    description:" We create multiscale models for local turbulent flow and thermal interactions across built environments and vegetated urban landscapes. Our work enables high-resolution assessments of local atmospheric dynamics and emission physics to inform architectural design, urban transportation planning, and air quality management.",
-     tags: [
-      { name: "Air Quality", color: "blue-text-gradient" },
-      { name: "Vegetated Urban Landscapes", color: "green-text-gradient" },
-    ],
-    image: logo,
-   // source_code_link: "https://github.com/lohitkolluri/WeatherPedia",
-  },
-
-];
-
-export const technologies = [
-  { name: "OpenFOAM", icon: OpenFOAM },
-  { name: "Ansys", icon: Ansys },
-  { name: "WRF", icon: WRF },
-  { name: "PyTorch", icon: PyTorch },
-  { name: "TF", icon: TF },
-];
-
-export const publication = [
-  {
-    title: "Urban airflow analysis using reduced-order modeling",
-    authors: "Sharma, S.N. and Goudarzi, N.",
-    publisher: "ASME Power Conference, Vol. 87172, p. V001T05A001, August 2023. American Society of Mechanical Engineers.",
-  },
-  {
-    title: "Urban Wind Energy Assessment Near High-Rise Buildings within Different Urban Morphology: Insights from CFD and POD",
-    authors: "Mortazavian, J., Sharma, S. and Goudarzi, N.",
-    publisher: "ASTFE Digital Library, 2024. Begel House Inc.",
-  },
-  {
-    title: "Techno-Economic Assessment of Urban Wind Energy Near Various Common Building Configurations",
-    authors: "Mortazavian, J. and Goudarzi, N.",
-    publisher: "Fluids Engineering Division Summer Meeting, Vol. 88131, p. V002T05A029, July 2024. American Society of Mechanical Engineers.",
-  },
-  {
-    title: "Multi-Fidelity Machine Learning Analysis of Wind Patterns Around High-Rise Buildings",
-    authors: "Mortazavian, J. and Goudarzi, N.",
-    publisher: "ASME Power Conference, Vol. 88186, p. V001T06A008, September 2024. American Society of Mechanical Engineers.",
-  },
-  {
-    title: "CFD Analysis for a Wind Tunnel Experiment for Investigating the Performance of Turbulence Models",
-    authors: "Najian, M., & Goudarzi, N.",
-    publisher: "ASCE Inspire 2023, pp. 895–904.",
-  },
-  {
-    title: "Effect of Non-Isothermal Conditions on Wind Patterns Near Isolated High-Rise Buildings",
-    authors: "Najian, M., Sharma, S., & Goudarzi, N.",
-    publisher: "ASME Power Conference, Vol. 88186, p. V001T06A009, September 2024. American Society of Mechanical Engineers.",
-  },
-  {
-    title: "Towards Improving High Spatiotemporal Weather Forecast Accuracy With Data-Driven Modeling",
-    authors: "Sharma, S., Najian, M., & Goudarzi, N.",
-    publisher: "Energy Sustainability, Vol. 87899, p. V001T01A012, July 2024. American Society of Mechanical Engineers.",
-  },
-  {
-    title: "Evaluating critical weather parameters using machine learning models",
-    authors: "Najian, M., & Goudarzi, N.",
-    publisher: "ASME Power Conference, Vol. 87172, p. V001T04A006, August 2023. American Society of Mechanical Engineers.",
-  },
-  {
-    title: "Sustainable Building Energy Modeling: the Synergistic Interplay of Urban Heat Island, Heat Waves, and Climate Zones",
-    authors: "Najian, M., & Goudarzi, N.",
-    publisher: "Fluids Engineering Division Summer Meeting, Vol. 88124, p. V001T01A027, July 2024. American Society of Mechanical Engineers.",
   },
 ];
 
+
+/* ------------------------------- TECHNOLOGIES ---------------------------- */
+const softwareAsset = (filename) => `${import.meta.env.BASE_URL}software/${filename}`;
+
+export const softwarePackages = [
+  {
+    id: "ansys", name: "ANSYS Fluent", icon: Ansys,
+    href: "https://www.ansys.com/products/fluids/ansys-fluent",
+    category: "CFD & heat transfer", use: "Fluid flow and heat-transfer simulation",
+    showInFacilities: true, technologyOrder: 1, technologyLabel: "Ansys",
+  },
+  {
+    id: "openfoam", name: "OpenFOAM", icon: OpenFOAM,
+    href: "https://openfoam.org/",
+    category: "CFD & heat transfer", use: "Open-source CFD and turbulence modeling",
+    showInFacilities: true, technologyOrder: 0,
+  },
+  {
+    id: "matlab", name: "MATLAB", icon: softwareAsset("matlab.svg"),
+    href: "https://www.mathworks.com/products/matlab.html",
+    category: "Scientific computing", use: "Numerical methods and data analysis",
+    showInFacilities: true,
+  },
+  {
+    id: "python", name: "Python", icon: softwareAsset("python.png"),
+    href: "https://www.python.org/",
+    category: "Scientific computing", use: "Scientific computing and automation",
+    showInFacilities: true,
+  },
+  {
+    id: "pytorch", name: "PyTorch", icon: PyTorch,
+    href: "https://pytorch.org/",
+    category: "Scientific machine learning", use: "Learning-based surrogate models and reconstruction",
+    showInFacilities: true, technologyOrder: 3,
+  },
+  {
+    id: "energyplus", name: "EnergyPlus", icon: softwareAsset("energyplus.png"),
+    href: "https://energyplus.net/",
+    category: "Building energy & power systems", use: "Building energy and thermal simulation",
+    showInFacilities: true,
+  },
+  {
+    id: "etap", name: "ETAP", icon: softwareAsset("etap.svg"),
+    href: "https://etap.com/",
+    category: "Building energy & power systems", use: "Electrical systems and microgrid analysis",
+    showInFacilities: true,
+  },
+  // Retain these existing technology entries without adding new Facilities claims.
+  {
+    id: "wrf", name: "WRF", icon: WRF, href: "https://www.mmm.ucar.edu/models/wrf",
+    category: "Atmospheric modeling", showInFacilities: false, technologyOrder: 2,
+  },
+  {
+    id: "tensorflow", name: "TensorFlow", icon: TF, href: "https://www.tensorflow.org/",
+    category: "Scientific machine learning", showInFacilities: false,
+    technologyOrder: 4, technologyLabel: "TF",
+  },
+];
+
+export const softwareGroups = softwarePackages
+  .filter((item) => item.showInFacilities)
+  .reduce((groups, item) => {
+    let group = groups.find((entry) => entry.title === item.category);
+    if (!group) {
+      group = { title: item.category, items: [] };
+      groups.push(group);
+    }
+    group.items.push(item);
+    return groups;
+  }, []);
+
+// Backward-compatible data for components/Tech.jsx; no second software list.
+export const technologies = softwarePackages
+  .filter((item) => Number.isInteger(item.technologyOrder))
+  .sort((a, b) => a.technologyOrder - b.technologyOrder)
+  .map((item) => ({ name: item.technologyLabel || item.name, icon: item.icon }));
+
+/* ------------------------------- PUBLICATION ----------------------------- */
+
+export const publications = [
+  // ==================== JOURNAL ARTICLES ====================
+
+  {
+    year: 2026,
+    type: "journal",
+    title:
+      "Morphology–flow coupling in urban microclimates: A parametric framework for local wind behavior around high-rise buildings",
+    authors: "Mortazavian, J.; Goudarzi, N.",
+    venue: "Computational Urban Science, 6, Article 35 (2026)",
+    url: "https://doi.org/10.1007/s43762-026-00262-9",
+  },
+  {
+    year: 2025,
+    type: "journal",
+    title:
+      "Urban density and pedestrian wind comfort in hot-arid climates: Insights for climate-resilient city planning",
+    authors: "Najian, M.; Goudarzi, N.",
+    venue: "Energy for Sustainable Development, 88, 101776",
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S0973082625001267",
+  },
+  {
+    year: 2021,
+    type: "journal",
+    title:
+      "Airflow and thermal comfort evaluation of a room with different outlet opening sizes and elevations ventilated by a two-sided wind catcher",
+    authors:
+      "Goudarzi, N.; Sheikhshahrokhdehkordi, M.; Khalesi, J.; Hosseiniirani, S.",
+    venue: "Journal of Building Engineering, 37, 102112",
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S235271022033744X",
+  },
+  {
+    year: 2020,
+    type: "journal",
+    title:
+      "Wind resource assessment and economic viability of conventional and unconventional small wind turbines: A case study of Maryland",
+    authors:
+      "Goudarzi, N.; Mohammadi, K.; Pé, A. S.; Delgado, R.; Zhu, W.",
+    venue: "Energies, 13(22), 5874",
+    url: "https://www.mdpi.com/1996-1073/13/22/5874",
+  },
+
+  // ==================== CONFERENCE PAPERS ====================
+
+  {
+    year: 2026,
+    type: "conference",
+    title:
+      "Generative reduced-order modeling for geometry-generalizable wind-pressure field prediction",
+    authors: "Sharma, S.; Goudarzi, N.; Tao, Y.",
+    venue: "ASME IMECE 2026, Vancouver, Canada",
+  },
+  {
+    year: 2026,
+    type: "conference",
+    title:
+      "Simulation-based learning for sustainability modeling coursework in an urban university",
+    authors: "Barot, Kh.; Liu, X.; Kalatzis, A.; Goudarzi, N.",
+    venue: "ASME IMECE 2026, Vancouver, Canada",
+  },
+  {
+    year: 2025,
+    type: "conference",
+    title:
+      "Bridging the gap in building energy audits: Aerial and handheld thermal imaging for smarter cities",
+    authors: "Najian, M.; Goudarzi, N.",
+    venue: "ASME IMECE 2025, Memphis, TN",
+  },
+  {
+    year: 2025,
+    type: "conference",
+    title:
+      "Surrogate model for the prediction of urban wind flow fields in the presence of a high-rise building",
+    authors: "Mortazavian, J.; Goudarzi, N.",
+    venue: "ASME IMECE 2025, Memphis, TN",
+  },
+  {
+    year: 2025,
+    type: "conference",
+    title:
+      "High-fidelity urban wind flow modeling for safe and efficient UAM operations in power infrastructure inspection",
+    authors: "Sharma, S.; Goudarzi, N.",
+    venue: "ASME IMECE 2025, Memphis, TN",
+  },
+  {
+    year: 2024,
+    type: "conference",
+    title:
+      "Enhancing urban microclimate resilience: Temperature stratification and CFD modeling for building energy efficiency",
+    authors: "Goudarzi, N.; Najian, M.",
+    venue: "Third Pacific Rim Thermal Engineering Conference (PRTEC 2024)",
+  },
+  {
+    year: 2024,
+    type: "conference",
+    title:
+      "Urban wind energy assessment near high-rise buildings within different urban morphologies: Insights from CFD and POD",
+    authors: "Goudarzi, N.; Najian, M.",
+    venue: "ASTFE 2024",
+  },
+  {
+    year: 2024,
+    type: "conference",
+    title:
+      "Multi-fidelity computational modeling for enhanced wind power density assessment in urban environments",
+    authors: "Mortazavian, J.; Najian, M.; Goudarzi, N.",
+    venue: "ASME Power Conference 2024",
+  },
+];
+
+
+/* --------------------------------- NEWS ---------------------------------- */
 export const news = [
   {
     title: "GSRA Grant Awarded to PhD Researchers",
-    description: "We’re proud to announce that two of our exceptional PhD students, Javad Mortazavian and Maede Najian, have been awarded the GSRA grant to fund their cutting-edge research on multi-objective prediction of urban microclimate wind patterns. Their work integrates multi-fidelity surrogate modeling (MFSM) with enhanced Building Energy Modeling (BEM) for neighborhood-scale microclimate analysis.",
+    description:
+      "We’re proud to announce that two of our exceptional PhD students, Javad Mortazavian and Maede Najian, have been awarded the GSRA grant to fund their cutting-edge research on multi-objective prediction of urban microclimate wind patterns. Their work integrates multi-fidelity surrogate modeling (MFSM) with enhanced Building Energy Modeling (BEM) for neighborhood-scale microclimate analysis.",
     image: GSRA,
-    tags: ["GSRA2025", "UrbanMicroclimate", "SurrogateModeling", "PhDResearch", "WindEngineering"]
+    tags: [
+      "GSRA2025",
+      "UrbanMicroclimate",
+      "SurrogateModeling",
+      "PhDResearch",
+      "WindEngineering",
+    ],
+  },
+];
+
+/* -------------------------------- SPONSORS -------------------------------- */
+// Sponsors
+export const sponsors = [
+  { name: "NSF", icon: NSF, tier: "federal" },
+  { name: "DOE", icon: DOE, tier: "federal" },
+  { name: "DOED", icon: DOED, tier: "federal" },
+  { name: "ONR", icon: ONR, tier: "federal" },
+
+  {
+    name: "AFRL",
+    icon: "/afrl-logo.png",
+    tier: "federal",
+  },
+
+  { name: "EPRI", icon: EPRI, tier: "industry" },
+  { name: "NPS", icon: NPS, tier: "state" },
+  { name: "NCDOT", icon: NCDOT, tier: "state" },
+  { name: "NCROP", icon: NCROP, tier: "state" },
+  { name: "MIPS", icon: MIPS, tier: "state" },
+
+  {
+    name: "OFRN",
+    icon: "/ofrn-logo.png",
+    tier: "state",
+  },
+];
+
+/* --------------------- CSU MENTORING AND EDUCATION ---------------------- */
+// Based on the PI's corrected November 2026 list. Counts are not additive:
+// a student may appear in a prior committee role and later direct advising.
+export const mentoringSummary = {
+  period: "2021–present",
+  updated: "November 2026",
+  graduate: [
+    { id: "phd", title: "PhD students advised", total: 4, ongoing: 2, past: 0 },
+    { id: "msc", title: "Master’s students advised", total: 17, ongoing: 2, past: 5 },
+    { id: "committee", title: "Graduate co-advising & committees", total: 16, ongoing: 2, past: 5 },
+  ],
+  researchers: 2,
+  undergraduateResearch: { period: "2022–2026", past: 38 },
+};
+
+export const educationProjects = [
+  {
+    id: "mecc", title: "Team CLE Energy: Clean Lake Erie Energy",
+    period: "AY 2026–27", status: "Ongoing", participants: 3,
+    context: "DOE Marine Energy Collegiate Competition 2027",
+    description: "An interdisciplinary CSU–Baldwin Wallace University team working on marine energy system modeling, design, and techno-economic assessment.",
+    skills: ["Marine energy", "System design", "Techno-economic assessment"],
+  },
+  {
+    id: "hercules", title: "Computational Modeling of CVD Reaction Mechanisms",
+    period: "AY 2026–27", status: "Ongoing", participants: 6,
+    context: "AFRL HERCULES / Mechanical & Chemical Engineering",
+    description: "An interdisciplinary design team studying chemical reactions and transport in chemical vapor deposition through CFD modeling.",
+    skills: ["Reacting flows", "CFD", "Advanced manufacturing"],
+  },
+  {
+    id: "etap", title: "Hybrid Energy Systems for EV Charging",
+    period: "AY 2026–27", status: "Ongoing", participants: 2,
+    context: "ETAP-based modeling and optimization",
+    description: "Student modeling of hybrid wind–solar energy systems for EV charging, with applications in distributed energy systems.",
+    skills: ["ETAP", "Wind–solar systems", "Optimization"],
+  },
+  {
+    id: "hybrid-ev", title: "Hybrid EV Charging Station",
+    period: "AY 2024–25", status: "Past project", participants: 3,
+    context: "Renewable energy system design",
+    description: "Design and development of hybrid renewable energy systems for EV charging stations.",
+    skills: ["Renewable energy", "Engineering design", "EV charging"],
+  },
+];
+
+export const educationActivities = [
+  {
+    title: "Public Interest Technology", label: "PIT / experiential learning",
+    description: "Participation in CSU initiatives connecting technology, community needs, engineering education, and workforce pathways.",
+  },
+  {
+    title: "Ohio Academy of Science", label: "Science engagement",
+    description: "Engagement with the Ohio Academy of Science as part of the PI’s broader educational and outreach activities.",
+  },
+  {
+    title: "K–12 & Teacher Engagement", label: "Engineering pathways",
+    description: "Hands-on engineering experiences and teacher professional development involving environmental measurements, thermal imaging, drones, and scientific visualization.",
   },
 ];
 
 
-
-export const sponsors = [
-  { name: "NSF", icon: NSF },
-  { name: "DOE", icon: DOE },
-  { name: "EPRI", icon: EPRI },
-  { name: "MIPS", icon: MIPS },
-  { name: "NCDOT", icon: NCDOT },
-  { name: "NCROP", icon: NCROP },
-  { name: "NPS", icon: NPS },
-  { name: "ONR", icon: ONR },
+// Education program records are maintained here, alongside the existing team data.
+export const chooseOhioFirstProjects = [
+ {period: "2026–27", title: "HVAC Efficiency", group: "Group 32", students: ["Gellert Leszko", "Alyce Boyers", "Lillian Mull", "Madison Eaton"], description: "Student research on HVAC efficiency, supported through project planning, progress discussions, and technical mentoring."},
+ {period: "2025", title: "The Evolution of Home Insulation: A Century of Advancements", students: ["Malik Husein", "Andrew Earls", "Seif Al Din Husein", "Lance Lease"], description: "A review of insulation materials, thermal resistance, building energy efficiency, and environmental considerations.", poster: "education/cof-insulation-2025.pdf", preview: "education/cof-insulation-2025.jpg"},
 ];
-
+export const asmeBoards = [
+ {period: "2026–27", officers: [["President", "Adam Ricco"], ["Vice President", "Lex Krupa"], ["Treasurer", "Andie Babcock"], ["Secretary", "Jumana Abdelghani"]]},
+ {period: "2025–26", officers: [["President", "Rosalie Carlberg"], ["Vice President", "Carmen LoConti"], ["Treasurer", "Chelsea Miller"], ["Secretary", "Lexi Saase"]]},
+ {period: "2024–25", officers: [["President", "Sanoj K. Karki"], ["Vice President", "Kush Bosmya"], ["Secretary", "Kalp Piyushbhai Patel"], ["Treasurer", "Prem Kumar Donthula"]]},
+ {period: "2023–24", officers: [["Officer", "Kyle E. Borsuk"], ["Officer", "Concetta N. Salvia"]], partial: true},
+];
+export const reuHighlights = [
+ {year: "2023", title: "Sustainability metrics for green alternatives", url: "https://engineering.csuohio.edu/glwind_reu/summer-2023-highlights"},
+ {year: "2024", title: "Urban weather sensing and AI-supported wind prediction", url: "https://engineering.csuohio.edu/glwindreu/summer-2024-highlights"},
+ {year: "2025", title: "Airfoil optimization and satellite–ground wind estimation", url: "https://engineering.csuohio.edu/glwindreu/summer-2025-highlights"},
+];
+export const highSchoolEngagement = {cohorts: 2, individualMentees: 2};
+export const handheldThermal = {model: "FLIR E76", resolution: "320 × 240 infrared pixels", lenses: "24°, 42°, and 80° lenses", software: "FLIR Thermal Studio", image: "facilities/flir-e76.png", source: "https://www.flir.com/products/e76/"};

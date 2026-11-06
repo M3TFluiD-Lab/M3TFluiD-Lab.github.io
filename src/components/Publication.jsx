@@ -1,48 +1,69 @@
-import React from "react";
-import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
-import { styles } from "../styles";
-import { github } from "../assets";
-import { SectionWrapper } from "../hoc";
-import { publication } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
 
-const PublicationCard = ({ title, authors, publisher }) => {
-  return (
-    <motion.div variants={fadeIn("up", "spring")} className="w-full">
-      <p className="text-white text-[15px] leading-7 text-justify text-center">
-        • <span className="font-bold">{title}</span>. <span className="italic">{authors}</span>. {publisher}
-      </p>
-    </motion.div>
-  );
-};
+import React from "react";
+import { publications } from "../constants";
+import SelectedTalks from "./SelectedTalks";
+import ResearchPosters from "./ResearchPosters";
 
 const Publication = () => {
+  const recent = [...publications].sort((a, b) => {
+    if (a.type !== b.type) {
+      return a.type === "journal" ? -1 : 1;
+    }
+
+    return b.year - a.year;
+  });
+
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Our Work in Journals & Conferences</p>
-        <h2 className={styles.sectionHeadText}>Publication</h2>
-      </motion.div>
+    <div className="mx-auto max-w-6xl px-6 pb-20 text-white">
+      <section id="selected-publications">
+        <h2 className="text-3xl font-bold">
+          Selected Publications
+        </h2>
 
-      <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px] text-justify text-center"
-        >
-          Below is a collection of our academic publications. These works reflect our contributions to the fields of computational fluid dynamics, building energy modeling, and urban microclimate research.
-        </motion.p>
-      </div>
+        <p className="mt-4 text-[16px] leading-7 text-secondary">
+          Selected research publications. For a complete and
+          up-to-date list, visit my{" "}
+          <a
+            href="https://scholar.google.com/citations?user=F3_tTU4AAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#79DDB9] underline underline-offset-4"
+          >
+            Google Scholar profile
+          </a>.
+        </p>
 
-      <div className="mt-20 flex flex-wrap gap-7">
-        {publication.map((pub, index) => (
-          <PublicationCard key={`pub-${index}`} {...pub} />
-        ))}
-      </div>
-    </>
+        <div className="mt-8 space-y-5">
+          {recent.map((pub, index) => (
+            <div key={`${pub.title}-${index}`}>
+              <p className="text-[15px] leading-7">
+                {pub.authors.replaceAll(";", ",")} ({pub.year}) {'‘'}
+                {pub.url ? (
+                  <a
+                    href={pub.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-white transition-colors hover:text-[#79DDB9]"
+                  >
+                    {pub.title}
+                  </a>
+                ) : (
+                  <span className="font-semibold">
+                    {pub.title}
+                  </span>
+                )}
+                {'’, '}<em>{pub.venue.replace(/ \(2026\)$/, "").split(",")[0]}</em>
+                {pub.venue.replace(/ \(2026\)$/, "").includes(",") && pub.venue.replace(/ \(2026\)$/, "").slice(pub.venue.indexOf(","))}.
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <SelectedTalks />
+      <ResearchPosters />
+    </div>
   );
 };
 
-const WrappedPublication = SectionWrapper(Publication, 'publication');
-
-export default WrappedPublication;
+export default Publication;

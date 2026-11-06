@@ -3,6 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html { scroll-padding-top: 96px; } /* match Page.jsx pt-24 */
+
+/* full-bleed section that spans the viewport width even inside centered layouts */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
 
 * {
   margin: 0;
@@ -141,4 +152,44 @@
 
 .confirmation {
   color: #00ff00;
+}
+
+/* ==========================================
+   M3TFluiD Lab Brand Theme
+   Inspired by the NCAR presentation
+   ========================================== */
+
+:root {
+  --brand-dark: #07100D;
+  --brand-forest: #03551E;
+  --brand-teal: #2A9886;
+  --brand-green: #5EBF5B;
+
+  --brand-text: #F5F7F5;
+  --brand-muted: #C2D1CB;
+
+  --brand-gradient: linear-gradient(
+    105deg,
+    var(--brand-forest) 0%,
+    var(--brand-teal) 52%,
+    var(--brand-green) 100%
+  );
+}
+
+/* Reusable brand classes */
+
+.brand-background {
+  background-color: var(--brand-dark);
+}
+
+.brand-navbar {
+  background: var(--brand-gradient);
+}
+
+.brand-text {
+  color: var(--brand-green);
+}
+
+.brand-border {
+  border-color: var(--brand-green);
 }

@@ -1,0 +1,124 @@
+/* Load after index.css. SVG artwork keeps its original lettering. */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --lab-font: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --lab-body: 1rem;
+  --lab-page-title: 2rem;
+  --lab-section-title: 1.75rem;
+  --lab-card-title: 1.125rem;
+  --lab-hero-title: 2.125rem;
+}
+
+#root {
+  font-family: var(--lab-font);
+  font-size: var(--lab-body);
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root :where(h1, h2, h3, h4, h5, h6, p, a, span, li, dt, dd, label, input, textarea, select, button) {
+  font-family: var(--lab-font);
+}
+
+#root main h1 {
+  font-size: var(--lab-page-title);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+#root main h2 {
+  font-size: var(--lab-section-title);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+#root main h3 {
+  font-size: var(--lab-card-title);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+#root main :is(h4, h5, h6) {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+/* The home page contains #about; explicit hooks support future hero markup. */
+#root main:has(#about) h1,
+#root main #hero h1,
+#root main h1.lab-hero-title {
+  font-size: var(--lab-hero-title);
+  line-height: 1.15;
+}
+
+#root main p {
+  font-size: var(--lab-body);
+  line-height: 1.9;
+}
+
+/* Compact card descriptions stay distinct from full-width body copy. */
+#root main p:is([class~="text-sm"], [class~="text-[13px]"], [class~="text-[14px]"]) {
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+#root main p:is([class~="text-[15px]"], [class~="text-[14px]"][class~="leading-7"], [class~="text-[14px]"][class~="leading-6"]) {
+  font-size: 0.9375rem;
+  line-height: 1.85;
+}
+
+/* Eyebrows and metadata remain small, including paragraphs inside helper panels. */
+#root main p:is(.uppercase, [class~="text-xs"], [class~="text-[11px]"], [class~="text-[12px]"]) {
+  font-size: 0.75rem;
+  line-height: 1.7;
+}
+
+#root main p.uppercase {
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+#root main :is(input, textarea, select, button) {
+  font-family: var(--lab-font);
+}
+
+#root > nav a {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+#root footer,
+#root footer :is(p, a, span) {
+  font-family: var(--lab-font);
+  font-size: 0.875rem;
+  line-height: 1.8;
+}
+
+#root footer .font-semibold {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --lab-body: 1.0625rem;
+    --lab-page-title: 2.5rem;
+    --lab-section-title: 2.25rem;
+    --lab-card-title: 1.25rem;
+    --lab-hero-title: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root { --lab-hero-title: 3.5rem; }
+}
+
+@media (max-width: 1023px) {
+  #root > nav #mobile-navigation a { font-size: 1rem; }
+}
