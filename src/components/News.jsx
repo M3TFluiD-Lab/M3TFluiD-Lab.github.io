@@ -1,60 +1,32 @@
-// === News.jsx ===
 import React from "react";
-import { Tilt } from "react-tilt";
-import { motion } from "framer-motion";
-
-import { styles } from "../styles";
-import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import { news } from "../constants";
 
-const NewsCard = ({ title, description, image, tags }) => {
+function News() {
   return (
-    <motion.div variants={fadeIn("up", "spring")}
-      className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
-    >
-      <Tilt
-        options={{ max: 45, scale: 1, speed: 450 }}
-        className="rounded-2xl"
-      >
-        <div className="relative w-full h-[230px] bg-black flex justify-center items-center rounded-2xl overflow-hidden">
-          <img
-            src={image}
-            alt="news_image"
-            className="max-h-full max-w-full object-contain"
-          />
-        </div>
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[22px]">{title}</h3>
-          <p className="mt-2 text-secondary text-[14px] text-left">{description}</p>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <p key={tag} className="text-[14px] text-blue-400">#{tag}</p>
-          ))}
-        </div>
-      </Tilt>
-    </motion.div>
-  );
-};
-
-const News = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        
-        {/*<h2 className={styles.sectionHeadText}>Latest News</h2>*/}
-      </motion.div>
-
-      <div className="mt-20 flex flex-wrap gap-7">
-        {news.map((item, index) => (
-          <NewsCard key={`news-${index}`} {...item} />
+    <section aria-labelledby="news-title">
+      <h1 id="news-title" className="mb-6 text-3xl font-bold text-[#42C9A3]">Lab News</h1>
+      <div className="grid items-start gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {news.map(({ title, description, image, imageAlt, tags }) => (
+          <details key={title} className="rounded-xl border border-white/10 bg-[#101715] p-4">
+            <summary className="cursor-pointer text-sm font-semibold leading-6 text-white hover:text-[#83D9BD]">
+              {title}
+            </summary>
+            <p className="mt-3 text-sm leading-6 text-[#D0DFD9]">{description}</p>
+            {image && imageAlt && (
+              <a href={image} target="_blank" rel="noreferrer" className="mt-3 block text-sm text-[#83D9BD] underline">
+                <img src={image} alt={imageAlt} loading="lazy" className="mb-1 h-24 rounded object-contain" />
+                Open certificate image
+              </a>
+            )}
+            <div className="mt-3 flex flex-wrap gap-2">
+              {tags?.map(tag => <span key={tag} className="text-xs text-[#83D9BD]">#{tag}</span>)}
+            </div>
+          </details>
         ))}
       </div>
-    </>
+    </section>
   );
-};
+}
 
-const WrappedNews = SectionWrapper(News, "news");
-
-export default WrappedNews;
+export default SectionWrapper(News, "news");

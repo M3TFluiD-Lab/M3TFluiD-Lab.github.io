@@ -32,10 +32,11 @@ const researchItems = [
     ...projects[1],
     id: "rom",
     theme: "methods",
-    eyebrow: "Computational Methods",
-    title: "Reduced-Order Modeling and Scientific ML",
+    eyebrow: "Computational Methods & Data-Driven Modeling",
+    title: "Reduced-Order Modeling and Scientific Machine Learning",
     summary:
-      "Using POD, DMD, SPOD, and machine learning to analyze, reconstruct, and predict unsteady flow fields.",
+      "We use POD, SPOD, DMD, Koopman analysis, deep learning, and generative models to identify coherent flow structures and reconstruct and forecast unsteady wind fields at lower computational cost.",
+    tags: [{ name: "POD / SPOD / DMD" }, { name: "Koopman Analysis" }, { name: "Deep Learning" }, { name: "Flow Prediction" }],
   },
   {
     id: "hercules",
@@ -69,10 +70,11 @@ const researchItems = [
     image: "/aam-urban-wind.png",
     id: "aam",
     theme: "aerospace",
-    eyebrow: "Aerospace and Mobility",
-    title: "Advanced Air Mobility and Urban Wind",
+    eyebrow: "Aerospace & Urban Flow Physics",
+    title: "Urban Wind Dynamics and Advanced Air Mobility",
     summary:
-      "Studying local wind fields, turbulence, and aerodynamic conditions relevant to UAV and advanced air mobility operations.",
+      "We combine high-fidelity CFD, wind-tunnel validation, and turbulence analysis to study flow separation, vortex shedding, and building wakes. We use these results to identify transient wind hazards and support safer UAV and advanced air mobility operations.",
+    tags: [{ name: "CFD / LES" }, { name: "Urban Aerodynamics" }, { name: "UAV / AAM" }, { name: "Wind Hazard Assessment" }],
   },
   {
     ...projects[5],
@@ -106,6 +108,8 @@ const sectionLabelClass =
 function ResearchCard({ item }) {
   return (
     <motion.article
+      id={`research-${item.id}`}
+      style={{ scrollMarginTop: "7rem" }}
       variants={fadeIn("up", "spring", 0.05, 0.7)}
       className={`${panelClass} ${item.id === "mfsm" ? "border-[#83D9BD]/70" : ""} h-full transition-all duration-300 hover:border-[#42C9A3]/50 hover:-translate-y-1`}
     >
@@ -239,6 +243,14 @@ const Research = () => {
                 className="rounded-full border border-[#42C9A3]/60 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
               >
                 Our Approach
+              </a>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#83D9BD]">
+              <a href="#research-aam" onClick={() => setActiveTheme("all")} className="underline">
+                Urban Wind Dynamics and Advanced Air Mobility
+              </a>
+              <a href="#research-rom" onClick={() => setActiveTheme("all")} className="underline">
+                Reduced-Order Modeling and Scientific Machine Learning
               </a>
             </div>
           </motion.div>

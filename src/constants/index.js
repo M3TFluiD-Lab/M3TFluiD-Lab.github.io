@@ -68,7 +68,6 @@ export const members = [
       "AAM",
       "AirQuality",
     ],
-    image: `${import.meta.env.BASE_URL}navid-goudarzi.png`,
     links: {
       linkedin: "https://www.linkedin.com/in/navid-goudarzi-4656b761/",
       scholar:
@@ -295,15 +294,14 @@ export const technologies = softwarePackages
 /* ------------------------------- PUBLICATION ----------------------------- */
 
 export const publications = [
-  // ==================== JOURNAL ARTICLES ====================
-
+  // Journal articles
   {
     year: 2026,
     type: "journal",
     title:
       "Morphology–flow coupling in urban microclimates: A parametric framework for local wind behavior around high-rise buildings",
-    authors: "Mortazavian, J.; Goudarzi, N.",
-    venue: "Computational Urban Science, 6, Article 35 (2026)",
+    authors: "Mortazavian, J. and Goudarzi, N.",
+    venue: "Computational Urban Science, 6(1), Article 35",
     url: "https://doi.org/10.1007/s43762-026-00262-9",
   },
   {
@@ -311,8 +309,8 @@ export const publications = [
     type: "journal",
     title:
       "Urban density and pedestrian wind comfort in hot-arid climates: Insights for climate-resilient city planning",
-    authors: "Najian, M.; Goudarzi, N.",
-    venue: "Energy for Sustainable Development, 88, 101776",
+    authors: "Najian, M. and Goudarzi, N.",
+    venue: "Energy for Sustainable Development, 88, Article 101776",
     url: "https://www.sciencedirect.com/science/article/abs/pii/S0973082625001267",
   },
   {
@@ -321,8 +319,8 @@ export const publications = [
     title:
       "Airflow and thermal comfort evaluation of a room with different outlet opening sizes and elevations ventilated by a two-sided wind catcher",
     authors:
-      "Goudarzi, N.; Sheikhshahrokhdehkordi, M.; Khalesi, J.; Hosseiniirani, S.",
-    venue: "Journal of Building Engineering, 37, 102112",
+      "Goudarzi, N., Sheikhshahrokhdehkordi, M., Khalesi, J. and Hosseiniirani, S.",
+    venue: "Journal of Building Engineering, 37, Article 102112",
     url: "https://www.sciencedirect.com/science/article/abs/pii/S235271022033744X",
   },
   {
@@ -330,77 +328,78 @@ export const publications = [
     type: "journal",
     title:
       "Wind resource assessment and economic viability of conventional and unconventional small wind turbines: A case study of Maryland",
-    authors:
-      "Goudarzi, N.; Mohammadi, K.; Pé, A. S.; Delgado, R.; Zhu, W.",
-    venue: "Energies, 13(22), 5874",
+    authors: "Goudarzi, N., Mohammadi, K., Pé, A. S., Delgado, R. and Zhu, W.",
+    venue: "Energies, 13(22), Article 5874",
     url: "https://www.mdpi.com/1996-1073/13/22/5874",
   },
 
-  // ==================== CONFERENCE PAPERS ====================
-
+  // Conference papers
+  /*
+  Add these two records when their publication details are confirmed.
   {
     year: 2026,
     type: "conference",
     title:
       "Generative reduced-order modeling for geometry-generalizable wind-pressure field prediction",
-    authors: "Sharma, S.; Goudarzi, N.; Tao, Y.",
-    venue: "ASME IMECE 2026, Vancouver, Canada",
+    authors: "Sharma, S., Goudarzi, N. and Tao, Y.",
+    venue: "ASME International Mechanical Engineering Congress and Exposition (IMECE), Vancouver, Canada",
   },
   {
     year: 2026,
     type: "conference",
     title:
       "Simulation-based learning for sustainability modeling coursework in an urban university",
-    authors: "Barot, Kh.; Liu, X.; Kalatzis, A.; Goudarzi, N.",
-    venue: "ASME IMECE 2026, Vancouver, Canada",
+    authors: "Barot, K., Liu, X., Kalatzis, A. and Goudarzi, N.",
+    venue: "ASME International Mechanical Engineering Congress and Exposition (IMECE), Vancouver, Canada",
+  },
+  */
+  {
+    year: 2025,
+    type: "conference",
+    title:
+      "Thermal performance assessment of LEED and non-LEED buildings via aerial and handheld infrared thermography",
+    authors: "Najian, M. and Goudarzi, N.",
+    venue:
+      "ASME International Mechanical Engineering Congress and Exposition (IMECE), Vol. 89404, Paper V009T17A005",
+  },
+  {
+    year: 2025,
+    type: "conference",
+    title: "A surrogate model for urban wind flow prediction around a high-rise building",
+    authors: "Mortazavian, J. and Goudarzi, N.",
+    venue:
+      "ASME International Mechanical Engineering Congress and Exposition (IMECE), Vol. 89404, Paper V009T17A010",
   },
   {
     year: 2025,
     type: "conference",
     title:
-      "Bridging the gap in building energy audits: Aerial and handheld thermal imaging for smarter cities",
-    authors: "Najian, M.; Goudarzi, N.",
-    venue: "ASME IMECE 2025, Memphis, TN",
+      "High-fidelity urban wind flow modeling for safe and efficient UAM operations supporting power infrastructure inspection",
+    authors: "Sharma, S. and Goudarzi, N.",
+    venue:
+      "ASME International Mechanical Engineering Congress and Exposition (IMECE), Vol. 89404, Paper V009T17A012",
   },
   {
-    year: 2025,
+    year: 2024,
     type: "conference",
-    title:
-      "Surrogate model for the prediction of urban wind flow fields in the presence of a high-rise building",
-    authors: "Mortazavian, J.; Goudarzi, N.",
-    venue: "ASME IMECE 2025, Memphis, TN",
-  },
-  {
-    year: 2025,
-    type: "conference",
-    title:
-      "High-fidelity urban wind flow modeling for safe and efficient UAM operations in power infrastructure inspection",
-    authors: "Sharma, S.; Goudarzi, N.",
-    venue: "ASME IMECE 2025, Memphis, TN",
+    title: "Effect of non-isothermal conditions on wind patterns near isolated high-rise buildings",
+    authors: "Najian, M., Sharma, S. and Goudarzi, N.",
+    venue: "ASME Power Conference, Vol. 88186, Paper V001T06A009",
   },
   {
     year: 2024,
     type: "conference",
     title:
-      "Enhancing urban microclimate resilience: Temperature stratification and CFD modeling for building energy efficiency",
-    authors: "Goudarzi, N.; Najian, M.",
-    venue: "Third Pacific Rim Thermal Engineering Conference (PRTEC 2024)",
+      "Urban wind energy assessment near high-rise buildings within different urban morphology: Insights from CFD and POD",
+    authors: "Mortazavian, J., Sharma, S. and Goudarzi, N. (corresponding author)",
+    venue: "ASTFE Digital Library, Begell House",
   },
   {
     year: 2024,
     type: "conference",
-    title:
-      "Urban wind energy assessment near high-rise buildings within different urban morphologies: Insights from CFD and POD",
-    authors: "Goudarzi, N.; Najian, M.",
-    venue: "ASTFE 2024",
-  },
-  {
-    year: 2024,
-    type: "conference",
-    title:
-      "Multi-fidelity computational modeling for enhanced wind power density assessment in urban environments",
-    authors: "Mortazavian, J.; Najian, M.; Goudarzi, N.",
-    venue: "ASME Power Conference 2024",
+    title: "Multi-fidelity machine learning analysis of wind patterns around high-rise buildings",
+    authors: "Mortazavian, J. and Goudarzi, N.",
+    venue: "ASME Power Conference, Vol. 88186, Paper V001T06A008",
   },
 ];
 
@@ -408,17 +407,37 @@ export const publications = [
 /* --------------------------------- NEWS ---------------------------------- */
 export const news = [
   {
-    title: "GSRA Grant Awarded to PhD Researchers",
-    description:
-      "We’re proud to announce that two of our exceptional PhD students, Javad Mortazavian and Maede Najian, have been awarded the GSRA grant to fund their cutting-edge research on multi-objective prediction of urban microclimate wind patterns. Their work integrates multi-fidelity surrogate modeling (MFSM) with enhanced Building Energy Modeling (BEM) for neighborhood-scale microclimate analysis.",
+    title: "Shivesh Narayan Sharma receives 2026 GSRA",
+    description: "Shivesh received a Graduate Student Research Award to develop a campus-scale wind digital twin at Cleveland State University. The project combines drone measurements, CFD, and reduced-order modeling to reconstruct and predict campus wind fields.",
     image: GSRA,
-    tags: [
-      "GSRA2025",
-      "UrbanMicroclimate",
-      "SurrogateModeling",
-      "PhDResearch",
-      "WindEngineering",
-    ],
+    tags: ["GSRA2026", "UrbanWind"],
+  },
+  {
+    title: "Maede Najian receives 2025 GSRA",
+    description: "Maede received a Graduate Student Research Award from Cleveland State University’s University Research Council. Her project incorporates neighborhood microclimate into building energy models to support urban climate adaptation.",
+    image: GSRA,
+    tags: ["GSRA2025", "BuildingEnergy"],
+  },
+  {
+    title: "Javad Mortazavian receives 2025 GSRA",
+    description: "Javad received GSRA funding to develop multi-fidelity surrogate models for predicting neighborhood-scale wind patterns.",
+    image: GSRA,
+    tags: ["GSRA2025", "UrbanWind"],
+  },
+  {
+    title: "Maede Najian named 2025 FED Honorary Graduate Return Scholar",
+    description:
+      "ASME recognized Maede at FEDSM 2025 in Philadelphia. Her research compares the thermal performance of LEED and non-LEED buildings using aerial and handheld infrared thermography.",
+    image: `${import.meta.env.BASE_URL}images/news/maede-fedsm-2025.webp`,
+    imageAlt: "Maede Najian’s 2025 FED Honorary Graduate Return Scholar certificate",
+    tags: ["FEDSM2025", "Thermography"],
+  },
+  {
+    title: "Maede Najian receives Best Paper recognition at ASME FEDSM 2024",
+    description: "Maede received Best Paper recognition in Anaheim for research on how urban heat islands, heat waves, and climate zones affect building energy performance. Her certificate identifies her as a FED 2024 GSS Scholar–FASTC.",
+    image: `${import.meta.env.BASE_URL}images/news/maede-fedsm-2024.webp`,
+    imageAlt: "Maede Najian’s ASME FED 2024 GSS Scholar certificate",
+    tags: ["FEDSM2024", "BuildingEnergy"],
   },
 ];
 
@@ -519,7 +538,16 @@ export const chooseOhioFirstProjects = [
 export const asmeBoards = [
  {period: "2026–27", officers: [["President", "Adam Ricco"], ["Vice President", "Lex Krupa"], ["Treasurer", "Andie Babcock"], ["Secretary", "Jumana Abdelghani"]]},
  {period: "2025–26", officers: [["President", "Rosalie Carlberg"], ["Vice President", "Carmen LoConti"], ["Treasurer", "Chelsea Miller"], ["Secretary", "Lexi Saase"]]},
- {period: "2024–25", officers: [["President", "Sanoj K. Karki"], ["Vice President", "Kush Bosmya"], ["Secretary", "Kalp Piyushbhai Patel"], ["Treasurer", "Prem Kumar Donthula"]]},
+
+ {
+  period: "2024–25",
+  officers: [
+    ["President", "Shivesh Sharma"],
+    ["Vice President", "Olamide Opadokun"],
+    ["Secretary", "Maede Najian"],
+    ["Treasurer", "Javad (Arya) Mortazavian"],
+  ],
+},
  {period: "2023–24", officers: [["Officer", "Kyle E. Borsuk"], ["Officer", "Concetta N. Salvia"]], partial: true},
 ];
 export const reuHighlights = [
