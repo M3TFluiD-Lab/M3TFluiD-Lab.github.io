@@ -11,7 +11,7 @@ import img3 from "./tech-stack/img3.png";
 import Navid from "./Team/Navid.png";
 import Javad from "./Team/Javad.jpg";
 import Maede from "./Team/Maede.jpeg";
-import Shivesh from "./Team/Shivesh.jpg";
+import Shivesh from "./Team/Shivesh.png";
 
 // Import project images
 import MFSM from "./projects/MFSM.png";
