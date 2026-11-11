@@ -62,7 +62,7 @@ function ProfileLinks({ member }) {
 
 function MemberPhoto({ member, pi = false }) {
   const nameParts = member.name.replace(/^Dr\.\s*/i, "").trim().split(/\s+/);
-  const filename = portraits[nameParts[0]];
+  const filename =  pi ? "navid-goudarzi.png" : portraits[nameParts[0]];
   const initials = nameParts.slice(0, 2).map(word => word.charAt(0).toUpperCase()).join("");
 
   return (

@@ -114,6 +114,7 @@ export const members = [
   },
   {
   name: "Julio Mendez",
+  email: "juliocesarmendez.carvajal@gmail.com",
   role: "Research Associate",
   projects: [
     "Computational Fluid Dynamics",
