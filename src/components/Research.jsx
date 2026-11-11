@@ -32,11 +32,16 @@ const researchItems = [
     ...projects[1],
     id: "rom",
     theme: "methods",
-    eyebrow: "Computational Methods & Data-Driven Modeling",
-    title: "Reduced-Order Modeling and Scientific Machine Learning",
-    summary:
-      "We use POD, SPOD, DMD, Koopman analysis, deep learning, and generative models to identify coherent flow structures and reconstruct and forecast unsteady wind fields at lower computational cost.",
-    tags: [{ name: "POD / SPOD / DMD" }, { name: "Koopman Analysis" }, { name: "Deep Learning" }, { name: "Flow Prediction" }],
+ eyebrow: "Computational Methods & Data-Driven Modeling",
+title: "Reduced-Order Modeling and Scientific Machine Learning",
+summary:
+  "We combine POD, SPOD, DMD, and Koopman analysis with deep learning and generative models to identify coherent flow structures, capture nonlinear turbulence, and reconstruct and forecast unsteady flow fields at lower computational cost.",
+tags: [
+  { name: "POD / SPOD / DMD" },
+  { name: "Koopman Analysis" },
+  { name: "Deep Learning" },
+  { name: "Flow Prediction" },
+],
   },
   {
     id: "hercules",
@@ -71,10 +76,15 @@ const researchItems = [
     id: "aam",
     theme: "aerospace",
     eyebrow: "Aerospace & Urban Flow Physics",
-    title: "Urban Wind Dynamics and Advanced Air Mobility",
-    summary:
-      "We combine high-fidelity CFD, wind-tunnel validation, and turbulence analysis to study flow separation, vortex shedding, and building wakes. We use these results to identify transient wind hazards and support safer UAV and advanced air mobility operations.",
-    tags: [{ name: "CFD / LES" }, { name: "Urban Aerodynamics" }, { name: "UAV / AAM" }, { name: "Wind Hazard Assessment" }],
+title: "Urban Wind Dynamics and Advanced Air Mobility",
+summary:
+  "We combine high-fidelity CFD, wind-tunnel validation, and turbulence analysis to study flow separation, vortex shedding, and wake interactions around buildings. We use these results to identify local wind hazards and support safer drone and advanced air mobility operations.",
+tags: [
+  { name: "CFD / LES" },
+  { name: "Urban Aerodynamics" },
+  { name: "UAV / AAM" },
+  { name: "Wind Hazard Assessment" },
+],
   },
   {
     ...projects[5],
