@@ -5,8 +5,6 @@ import {
   MFSM,
   ROM,
   CFDBEM,
-  Maede,
-  Shivesh,
   logo,
   OpenFOAM,
   Ansys,
@@ -84,7 +82,6 @@ export const members = [
     role: "PhD Candidate",
     expectedGraduation: "December 2027",
     projects: ["UMC-BEM/BIM-ML", "AirQuality"],
-    image: Maede,
   },
 
   {
@@ -93,7 +90,6 @@ export const members = [
     role: "PhD Candidate",
     expectedGraduation: "December 2027",
     projects: ["ROM-ML", "AAM"],
-    image: Shivesh,
   },
 
   {
@@ -105,19 +101,16 @@ export const members = [
       "Modeling & Simulation",
       "Scientific Discovery",
     ],
-      image: "/brian-kohut.png",
   },
   {
     name: "Lokesh Kantam",
     role: "MSc Student",
     projects: [],
-    image: "",
   },
   {
     name: "Khushbuben Barot",
     role: "MSc Student (Co-advised)",
     projects: ["Virtual Reality (VR)"],
-    image: "/khushbuben-barot.png",
   },
   {
   name: "Julio Mendez",
@@ -127,7 +120,6 @@ export const members = [
     "Chemical Vapor Deposition",
     "Multiphysics Modeling",
   ],
-  image: "/Julio-Mendez.png",
 },
   {
     name: "Eman Hassan",
@@ -136,7 +128,6 @@ export const members = [
       "Computational Fluid Dynamics",
       "Chemical Vapor Deposition",
     ],
-    image: `${import.meta.env.BASE_URL}eman-hassan.png`,
   },
 ];
 
